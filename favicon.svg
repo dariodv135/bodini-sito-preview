@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Francesca Bodini, Biologa Nutrizionista">
+  <rect width="64" height="64" rx="14" fill="#0B2A3F"/>
+  <path d="M4 40c7-6 11 6 18 0s11 6 18 0 11 6 18 0" fill="none" stroke="#A9DCF3" stroke-width="4" stroke-linecap="round"/>
+  <path d="M4 52c7-6 11 6 18 0s11 6 18 0 11 6 18 0" fill="none" stroke="#2C8FCB" stroke-width="4" stroke-linecap="round"/>
+  <text x="32" y="28" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700" fill="#F2F7FA">fb</text>
+</svg>

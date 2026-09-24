@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chi sono | Dott.ssa Francesca Bodini, Medico a Milano</title>
+<meta name="description" content="Medico Chirurgo, Specialista in Scienza dell'Alimentazione con esperienza ospedaliera a Milano. Formazione, titoli, pubblicazioni e metodo di lavoro.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B2A3F">
+<!-- Riattivare quando l'URL reale è noto, con href assoluto al posto di [URL SITO]:
+<link rel="canonical" href="[URL SITO]/chi-sono.html"> -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dott.ssa Francesca Bodini, Medico specialista in Scienza dell'Alimentazione">
+<meta property="og:locale" content="it_IT">
+<!-- Riattivare con l'URL assoluto reale: <meta property="og:url" content="[URL SITO]/chi-sono.html"> -->
+<meta property="og:title" content="Chi sono | Dott.ssa Francesca Bodini, Medico a Milano">
+<meta property="og:description" content="Medico Chirurgo, Specialista in Scienza dell'Alimentazione con esperienza ospedaliera a Milano. Formazione, titoli, pubblicazioni e metodo di lavoro.">
+<!-- Fonts are self hosted in assets/fonts/ (see styles.css): no request leaves the site -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage-grotesque-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/figtree-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/cibo-frutti-bosco.jpg" imagesrcset="assets/cibo-frutti-bosco-480.jpg 480w, assets/cibo-frutti-bosco-800.jpg 800w, assets/cibo-frutti-bosco.jpg 1400w" imagesizes="(max-width:899px) 92vw, 40vw" fetchpriority="high">
+<link rel="stylesheet" href="styles.css">
+<style data-page="chi-sono">
+/* Page rules only. Every selector is prefixed with .page--chi-sono. */
+
+/* Vertical rhythm: the sections are deliberately unequal, the deep-water one breathes most */
+.page--chi-sono .bio-section{padding-block:calc(var(--section)*.85) calc(var(--section)*1.05)}
+.page--chi-sono .credentials{padding-block:calc(var(--section)*.9)}
+.page--chi-sono .method{padding-block:var(--section) calc(var(--section)*1.2)}
+.page--chi-sono .places-section{padding-block:calc(var(--section)*.9) calc(var(--section)*1.05)}
+
+/* Bio: the portrait takes 5 columns and stays with the reader while the text scrolls */
+.page--chi-sono .bio{align-items:start}
+.page--chi-sono .bio .portrait{max-width:none}
+.page--chi-sono .bio__media{position:sticky;top:calc(var(--header-h) + 1.5rem)}
+.page--chi-sono .bio__text{max-width:64ch}
+.page--chi-sono .bio__text .kicker{margin-bottom:.3rem}
+/* The kicker takes the first-child slot, so .prose would push the heading down 2.2em */
+.page--chi-sono .bio__text h2{margin-top:0}
+@media (max-width:899px){
+  .page--chi-sono .bio__media{position:static;max-width:420px}
+}
+
+/* Credentials: the list on the left, the international paper called out beside it */
+.page--chi-sono .titles li{font-size:1rem;color:var(--inchiostro)}
+.page--chi-sono .titles__note{margin:1.4rem 0 0;font-size:var(--t-s);color:var(--inchiostro-2)}
+.page--chi-sono .pub{background:var(--cielo-tint);border:1px solid var(--sale);border-radius:var(--radius);padding:clamp(1.25rem,3vw,1.9rem)}
+.page--chi-sono .pub h3{font-size:1.15rem;margin-bottom:.3rem}
+.page--chi-sono .pub__journal{font-family:var(--font-display);font-weight:700;font-size:1.56rem;line-height:1.15;color:var(--mare);margin:0 0 .6rem;font-variant-numeric:tabular-nums}
+.page--chi-sono .pub p{font-size:var(--t-m);color:var(--inchiostro-2)}
+.page--chi-sono .pub p:last-child{margin-bottom:0}
+
+/* Method on deep water: the light ink of .pillars now lives in styles.css, under
+   .section--mare, so any page that reuses the component keeps the contrast */
+.page--chi-sono .method .pillars{margin-top:0}
+.page--chi-sono .method__head{position:sticky;top:calc(var(--header-h) + 1.5rem)}
+@media (max-width:899px){.page--chi-sono .method__head{position:static}}
+
+/* Where I practise: photo, then a rule and the text. Not cards */
+.page--chi-sono .places{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,2.5rem)}
+.page--chi-sono .place figure{position:relative;margin:0 0 1.2rem;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:var(--cielo);box-shadow:var(--shadow-soft)}
+.page--chi-sono .place figure img{width:100%;height:100%;object-fit:cover}
+.page--chi-sono .place h3{border-top:2px solid var(--abisso);padding-top:.9rem;margin-bottom:.5rem}
+.page--chi-sono .place p{color:var(--inchiostro-2);margin-bottom:.5rem}
+.page--chi-sono .place .chips{margin-bottom:.8rem}
+@media (max-width:767px){.page--chi-sono .places{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="page page--chi-sono">
+<!-- The .js class hides every .reveal until main.js shows it: if main.js never arrives
+     (404, broken cache, network error) the class is dropped again after 4s and the page
+     falls back to its no-JS presentation, fully readable. -->
+<script>(function(d){d.classList.add('js');setTimeout(function(){if(!window.BodiniSite)d.classList.remove('js');},4000);})(document.documentElement);</script>
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- ===================== Header (identical on every page, only aria-current changes) ===================== -->
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Dott.ssa Francesca Bodini, vai alla home">
+      <span class="brand__name">Dott.ssa Francesca Bodini</span>
+      <span class="brand__role">Medico specialista in Scienza dell'Alimentazione</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri il menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav-menu" aria-label="Navigazione principale">
+      <ul class="nav__list">
+        <li><a href="chi-sono.html" aria-current="page">Chi sono</a></li>
+        <li><a href="percorsi.html">Percorsi</a></li>
+        <li><a href="prenota.html">Visite e prenota</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+      <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<!-- tabindex="-1": without it Safari moves the scroll but leaves focus on the skip link -->
+<main id="main" tabindex="-1">
+
+<!-- ===================== Page hero ===================== -->
+<section class="page-hero page-hero--sabbia" aria-labelledby="chi-sono-page-title">
+  <div class="container page-hero__grid">
+    <div class="page-hero__text">
+      <span class="kicker reveal">Chi sono</span>
+      <h1 id="chi-sono-page-title" class="reveal reveal--clip">Mi interessa la persona, prima del piatto. E del referto.</h1>
+      <p class="page-hero__sub reveal" data-delay="1">Medico Chirurgo, Specialista in Scienza dell'Alimentazione. Ricevo a Milano e online.</p>
+    </div>
+    <figure class="page-hero__media reveal">
+      <img src="assets/cibo-frutti-bosco.jpg" srcset="assets/cibo-frutti-bosco-480.jpg 480w, assets/cibo-frutti-bosco-800.jpg 800w, assets/cibo-frutti-bosco.jpg 1400w" sizes="(max-width:899px) 92vw, 40vw" width="1400" height="1050" alt="Primo piano di lamponi e mirtilli freschi su un piatto bianco." loading="eager" fetchpriority="high" decoding="async">
+    </figure>
+  </div>
+  <!-- Wave B: single crest, mirrored -->
+  <div class="wave wave--sabbia" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,50 C240,90 460,30 740,70 C1020,110 1200,30 1440,80 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Bio in prima persona + ritratto grande (5/7) ===================== -->
+<section class="section section--sabbia bio-section" aria-labelledby="bio-title">
+  <div class="container grid-2 grid-2--5-7 bio">
+    <div class="bio__media reveal">
+      <figure class="portrait">
+        <!-- assets/ritratto.jpg is not available yet: the provisional photo stays, with its badge.
+             When the real portrait arrives: swap the src, update alt and width/height, remove the figcaption. -->
+        <img src="assets/ritratto-provvisorio.jpg" srcset="assets/ritratto-provvisorio-480.jpg 480w, assets/ritratto-provvisorio-800.jpg 800w, assets/ritratto-provvisorio.jpg 900w" sizes="(max-width:899px) 92vw, 40vw" width="900" height="1170" alt="Ritratto provvisorio: donna sorridente all'aperto in luce naturale morbida" loading="lazy" decoding="async">
+        <figcaption class="portrait__badge">Foto provvisoria</figcaption>
+      </figure>
+    </div>
+    <div class="bio__text prose reveal" data-delay="1">
+      <span class="kicker">La mia storia</span>
+      <h2 id="bio-title">Perché ho scelto la nutrizione clinica.</h2>
+      <p>Sono Francesca Bodini, Medico Chirurgo e Specialista in Scienza dell'Alimentazione. Ricevo nel mio studio a Milano e online, in videochiamata.</p>
+      <p>Ho scelto la nutrizione clinica perché è il punto in cui la medicina incontra la vita di tutti i giorni: quello che mangi, quanto dormi, quanto tempo hai, cosa ti pesa davvero. Prima dell'attività privata ho lavorato in strutture ospedaliere e ambulatoriali di Milano, seguendo persone con sovrappeso, obesità e disturbi metabolici con percorsi strutturati, basati sulle evidenze scientifiche.</p>
+      <p>Essere medico mi permette di guardare tutto il quadro. In visita raccolgo la tua storia clinica, ti visito, leggo gli esami e, se serve, ne prescrivo di nuovi. Quando è indicato posso impostare una dieta chetogenica medica, seguirti prima e dopo un intervento di chirurgia bariatrica o integrare nel percorso una terapia farmacologica. Sono strumenti, non scorciatoie: si usano quando hanno senso per te, sempre dentro un piano alimentare che puoi seguire davvero.</p>
+      <p>Il rigore clinico, però, da solo non basta. Nella prima visita ascolto molto: come sono le tue giornate, cosa cucini, cosa ti mette in difficoltà quando pensi al cibo. Da lì costruiamo qualcosa che regge dal lunedì al lunedì, non solo nelle settimane buone. Non credo nelle liste di alimenti proibiti né nel senso di colpa come metodo.</p>
+      <p>Non prometto risultati in chilogrammi, perché nessun medico serio può farlo. Prometto una valutazione attenta, un piano chiaro e la mia presenza lungo la strada, con la calma che serve.</p>
+      <p class="closing">Se ti ritrovi in queste parole, sono qui.</p>
+    </div>
+  </div>
+  <!-- Wave C: two overlapping crests -->
+  <div class="wave wave--schiuma" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" fill-opacity=".35" d="M0,58 C180,26 320,84 540,46 C760,8 920,88 1140,52 C1290,28 1390,40 1440,36 L1440,120 L0,120 Z"/><path fill="currentColor" d="M0,72 C160,40 300,96 520,58 C740,20 900,100 1120,64 C1280,38 1380,52 1440,46 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Formazione e titoli + pubblicazione ===================== -->
+<section class="section credentials" aria-labelledby="titoli-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker reveal">Titoli</span>
+      <h2 id="titoli-title" class="reveal reveal--clip">Formazione e titoli</h2>
+      <p class="lead reveal" data-delay="1">Il percorso di studi, l'iscrizione all'Ordine e il lavoro pubblicato, in chiaro.</p>
+    </div>
+    <div class="grid-2 grid-2--7-5">
+      <div class="reveal">
+        <ul class="titles">
+          <li>Laurea in Medicina e Chirurgia, <mark class="ph" title="Dato da inserire">[UNIVERSITÀ]</mark>, <mark class="ph" title="Dato da inserire">[ANNO]</mark></li>
+          <li>Specializzazione in Scienza dell'Alimentazione, 70/70 e lode, <mark class="ph" title="Dato da inserire">[UNIVERSITÀ]</mark>, <mark class="ph" title="Dato da inserire">[ANNO]</mark></li>
+          <li>Abilitazione all'esercizio della professione medica, <mark class="ph" title="Dato da inserire">[ANNO]</mark></li>
+          <li>Iscrizione all'Ordine dei Medici Chirurghi e Odontoiatri di <mark class="ph" title="Dato da inserire">[PROVINCIA ORDINE]</mark>, n. <mark class="ph" title="Dato da inserire">[N. ISCRIZIONE OMCEO]</mark></li>
+          <li>Esperienza ospedaliera e ambulatoriale a Milano nel trattamento di sovrappeso, obesità e disturbi metabolici</li>
+          <li>Pubblicazione scientifica sulla rivista internazionale Children (2023): <mark class="ph" title="Dato da inserire">[TITOLO PUBBLICAZIONE]</mark></li>
+          <li><mark class="ph" title="Dato da inserire">[CORSI/MASTER]</mark>, <mark class="ph" title="Dato da inserire">[ENTE]</mark>, <mark class="ph" title="Dato da inserire">[ANNO]</mark></li>
+        </ul>
+        <p class="titles__note">Assicurazione RC professionale <mark class="ph" title="Dato da inserire">[COMPAGNIA ASSICURATIVA]</mark>, polizza n. <mark class="ph" title="Dato da inserire">[N. POLIZZA]</mark>, massimale <mark class="ph" title="Dato da inserire">[MASSIMALE]</mark>, come previsto dalla legge per ogni medico.</p>
+      </div>
+      <aside class="pub reveal" data-delay="1" aria-labelledby="pub-title">
+        <h3 id="pub-title">Pubblicazione scientifica</h3>
+        <p class="pub__journal num">Children, 2023</p>
+        <p>Rivista internazionale peer reviewed. Titolo del lavoro: <mark class="ph" title="Dato da inserire">[TITOLO PUBBLICAZIONE]</mark>.</p>
+        <p>Riferimento completo e link: <mark class="ph" title="Dato da inserire">[DOI PUBBLICAZIONE]</mark>.</p>
+      </aside>
+    </div>
+  </div>
+  <!-- Wave A: single crest -->
+  <div class="wave wave--mare-profondo" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,80 C240,30 420,110 700,70 C980,30 1200,90 1440,50 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Come lavoro: i tre pilastri ===================== -->
+<section class="section section--mare method" aria-labelledby="metodo-title">
+  <div class="container grid-2 grid-2--5-7">
+    <div class="method__head">
+      <span class="kicker reveal">Il metodo</span>
+      <h2 id="metodo-title" class="reveal reveal--clip">Come lavoro</h2>
+      <p class="lead reveal" data-delay="1">Tre passaggi che valgono per ogni percorso, dalla prima visita ai controlli.</p>
+    </div>
+    <ol class="pillars reveal" data-delay="1">
+      <li>
+        <div>
+          <h3>Valutazione medica</h3>
+          <p>Prima del piano c'è la visita: storia clinica, esame obiettivo, esami letti con attenzione. Si decide cosa fare dopo aver capito cosa c'è.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Su misura, davvero</h3>
+          <p>Il piano parte dalle tue giornate, dai tuoi gusti e dal tempo che hai. Gli strumenti clinici, quando servono, si adattano a te e non il contrario.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Risultati che reggono</h3>
+          <p>Cambiamenti graduali che restano negli anni, con controlli regolari. Nessuna promessa in chilogrammi, nessuna fretta.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <!-- Wave C: two overlapping crests -->
+  <div class="wave wave--sabbia" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" fill-opacity=".35" d="M0,58 C180,26 320,84 540,46 C760,8 920,88 1140,52 C1290,28 1390,40 1440,36 L1440,120 L0,120 Z"/><path fill="currentColor" d="M0,72 C160,40 300,96 520,58 C740,20 900,100 1120,64 C1280,38 1380,52 1440,46 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Dove ricevo ===================== -->
+<section class="section section--sabbia places-section" aria-labelledby="dove-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker reveal">Studio e online</span>
+      <h2 id="dove-title" class="reveal reveal--clip">Dove ricevo</h2>
+    </div>
+    <div class="places">
+      <div class="place reveal">
+        <!-- assets/studio.jpg is a stock photo, not the real studio: the badge says so.
+             Replace with assets/studio-reale.jpg when available, then remove the figcaption. -->
+        <figure>
+          <img src="assets/studio.jpg" srcset="assets/studio-480.jpg 480w, assets/studio-800.jpg 800w, assets/studio.jpg 1000w" sizes="(max-width:767px) 92vw, 44vw" width="1000" height="750" alt="Stanza luminosa con due finestre, scrivania in legno e piante verdi" loading="lazy" decoding="async">
+          <figcaption class="portrait__badge">Immagine provvisoria</figcaption>
+        </figure>
+        <h3>In studio, a Milano</h3>
+        <p class="chips"><span class="chip">In studio</span></p>
+        <p><mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark>, Milano. Studio privato, su appuntamento.</p>
+        <p><mark class="ph" title="Dato da inserire">[ORARI]</mark></p>
+      </div>
+      <div class="place reveal" data-delay="1">
+        <figure>
+          <img src="assets/cibo-mani-taglio.jpg" srcset="assets/cibo-mani-taglio-480.jpg 480w, assets/cibo-mani-taglio-800.jpg 800w, assets/cibo-mani-taglio.jpg 1400w" sizes="(max-width:767px) 92vw, 44vw" width="1400" height="1050" alt="Mani che tagliano peperoni rossi e insalata su un tagliere di legno, con ciotole di verdure tagliate." loading="lazy" decoding="async">
+        </figure>
+        <h3>Online, da dove sei</h3>
+        <p class="chips"><span class="chip chip--online">Online</span></p>
+        <p>In videochiamata su Google Meet, da qualsiasi città. Il link arriva con la conferma della prenotazione.</p>
+      </div>
+    </div>
+    <div class="actions reveal">
+      <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="link-arrow" href="contatti.html">Come arrivare <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+  <!-- Wave D: long single crest -->
+  <div class="wave wave--mare-profondo" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,64 C180,110 360,20 560,52 C760,84 900,118 1100,80 C1260,50 1360,40 1440,58 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== CTA finale ===================== -->
+<section class="final final--flat" aria-labelledby="chi-sono-final-title">
+  <div class="container reveal">
+    <h2 id="chi-sono-final-title">Se ti ritrovi in queste parole, ci vediamo in visita.</h2>
+    <p class="lead">Una prima visita per conoscerci: ascolto la tua storia, guardo gli esami e ti dico con chiarezza da dove partire.</p>
+    <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="final__sub">In studio a Milano o online. Caparra rimborsabile fino a 24 ore prima.</p>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ===================== Footer (identical on every page) ===================== -->
+<footer class="footer" aria-label="Contatti e note legali">
+  <div class="container">
+    <h2 class="visually-hidden">Contatti e note legali</h2>
+    <p class="footer__desc">Dott.ssa Francesca Bodini, Medico Chirurgo, Specialista in Scienza dell'Alimentazione. Visite mediche nutrizionali in studio a Milano e online.</p>
+    <div class="footer__grid">
+      <div>
+        <h3>Studio</h3>
+        <ul>
+          <li><mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark></li>
+          <li>Milano</li>
+          <li>Tel. <mark class="ph" title="Dato da inserire">[TELEFONO]</mark></li>
+          <li><mark class="ph" title="Dato da inserire">[EMAIL]</mark></li>
+          <li><a href="contatti.html">Come arrivare</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Orari</h3>
+        <ul>
+          <li><mark class="ph" title="Dato da inserire">[ORARI]</mark></li>
+          <li>Visite online su appuntamento</li>
+          <li><a href="prenota.html#widget">Prenota online</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Link legali</h3>
+        <ul>
+          <li><a href="privacy.html">Informativa privacy</a></li>
+          <li><a href="cookie.html">Cookie policy</a></li>
+          <li><a href="consenso-informato.html">Consenso informato</a></li>
+          <li><a href="condizioni.html">Condizioni di prenotazione e disdetta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Note</h3>
+        <ul class="footer__note">
+          <li>P.IVA <mark class="ph" title="Dato da inserire">[P.IVA]</mark></li>
+          <li>Iscritta all'Ordine dei Medici Chirurghi e Odontoiatri di <mark class="ph" title="Dato da inserire">[PROVINCIA ORDINE]</mark>, n. <mark class="ph" title="Dato da inserire">[N. ISCRIZIONE OMCEO]</mark></li>
+          <li>Assicurazione RC professionale <mark class="ph" title="Dato da inserire">[COMPAGNIA ASSICURATIVA]</mark>, polizza n. <mark class="ph" title="Dato da inserire">[N. POLIZZA]</mark>, massimale <mark class="ph" title="Dato da inserire">[MASSIMALE]</mark></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disclaimer">Le informazioni di questo sito hanno scopo informativo e non sostituiscono la visita medica. In caso di urgenza rivolgiti al tuo medico curante o ai servizi di emergenza.</p>
+    <div class="footer__bottom">
+      <p>&copy; <mark class="ph" title="Dato da inserire">[ANNO]</mark> Dott.ssa Francesca Bodini. Tutti i diritti riservati.</p>
+      <p>Foto su Unsplash: <a href="https://unsplash.com/photos/GSmBJZ43vvQ" rel="noopener">Alen Smola</a>, <a href="https://unsplash.com/photos/j5almO1E8rU" rel="noopener">Artem Beliaikin</a>, <a href="https://unsplash.com/photos/2pia6OAe5rA" rel="noopener">Annie Spratt</a>, <a href="https://unsplash.com/photos/qEswHvOmi1c" rel="noopener">Lionello DelPiccolo</a>, <a href="https://unsplash.com/photos/EzH46XCDQRY" rel="noopener">Maarten van den Heuvel</a>, <a href="https://unsplash.com/photos/1SJRLmhnmaA" rel="noopener">Nathan Dumlao</a>; altre foto di cibo: <a href="https://unsplash.com/photos/a-colorful-salad-bowl-with-many-fresh-ingredients-_vy3L5n8VnI" rel="noopener">insalata</a>, <a href="https://unsplash.com/photos/fresh-vegetables-on-market-stall-Zaiuy5dKeCk" rel="noopener">verdure al mercato</a>, <a href="https://unsplash.com/photos/a-bowl-filled-with-different-types-of-vegetables-jrs4j6k6QKA" rel="noopener">bowl</a>, <a href="https://unsplash.com/photos/red-and-black-berries-on-white-ceramic-plate-xXrnMYeBcgI" rel="noopener">frutti di bosco</a>, <a href="https://unsplash.com/photos/a-row-of-colorful-peppers-sitting-on-top-of-a-white-table-jUpIxBfRIVY" rel="noopener">peperoni</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cta-bar" id="cta-bar">
+  <a class="btn btn--primary btn--block" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>

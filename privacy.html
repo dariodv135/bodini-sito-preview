@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informativa privacy | Dott.ssa Francesca Bodini</title>
+<meta name="description" content="Come tratto i tuoi dati personali e i dati relativi alla salute quando prenoti una visita o mi scrivi. Informativa ai sensi degli artt. 13 e 14 GDPR.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B2A3F">
+<!-- Riattivare quando l'URL reale è noto, con href assoluto al posto di [URL SITO]:
+<link rel="canonical" href="[URL SITO]/privacy.html"> -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dott.ssa Francesca Bodini, Medico specialista in Scienza dell'Alimentazione">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Informativa privacy | Dott.ssa Francesca Bodini">
+<meta property="og:description" content="Come tratto i tuoi dati personali e i dati relativi alla salute quando prenoti una visita o mi scrivi. Informativa ai sensi degli artt. 13 e 14 GDPR.">
+<!-- Fonts are self hosted in assets/fonts/ (see styles.css): no request leaves the site -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage-grotesque-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/figtree-latin.woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style data-page="privacy">
+/* Legal pages: the document sits on the foam ground, the index rail stays narrow and quiet */
+.page--privacy .legal{padding-block:0}
+.page--privacy .legal__body h3{color:var(--abisso)}
+.page--privacy .legal__body > .callout:last-child{margin-top:2.5rem}
+/* The closing wave overlaps the last lines: give the section room for it */
+.page--privacy .section[aria-label]{padding-bottom:calc(var(--section)*1.15)}
+</style>
+</head>
+<body class="page page--privacy">
+<!-- The .js class hides every .reveal until main.js shows it: if main.js never arrives
+     (404, broken cache, network error) the class is dropped again after 4s and the page
+     falls back to its no-JS presentation, fully readable. -->
+<script>(function(d){d.classList.add('js');setTimeout(function(){if(!window.BodiniSite)d.classList.remove('js');},4000);})(document.documentElement);</script>
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- ===================== Header (identical on every page, only aria-current changes) ===================== -->
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Dott.ssa Francesca Bodini, vai alla home">
+      <span class="brand__name">Dott.ssa Francesca Bodini</span>
+      <span class="brand__role">Medico specialista in Scienza dell'Alimentazione</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri il menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav-menu" aria-label="Navigazione principale">
+      <ul class="nav__list">
+        <li><a href="chi-sono.html">Chi sono</a></li>
+        <li><a href="percorsi.html">Percorsi</a></li>
+        <li><a href="prenota.html">Visite e prenota</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+      <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+  </div>
+</header>
+<!-- tabindex="-1": without it Safari moves the scroll but leaves focus on the skip link -->
+<main id="main" tabindex="-1">
+
+<!-- ===================== Page hero (text only: legal document) ===================== -->
+<section class="page-hero page-hero--plain" aria-labelledby="privacy-page-title">
+  <div class="container page-hero__grid">
+    <div class="page-hero__text">
+      <span class="kicker">Note legali</span>
+      <h1 id="privacy-page-title">Informativa sulla privacy</h1>
+      <p class="page-hero__sub">Quando prenoti una visita o mi scrivi, mi affidi dati personali e dati relativi alla salute. Qui trovi chi li tratta, perché, per quanto tempo e quali sono i tuoi diritti.</p>
+    </div>
+  </div>
+  <!-- Wave C: two overlapping crests -->
+  <div class="wave wave--schiuma" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" fill-opacity=".3" d="M0,58 C180,26 320,84 540,46 C760,8 920,88 1140,52 C1290,28 1390,40 1440,36 L1440,120 L0,120 Z"/><path fill="currentColor" d="M0,72 C160,40 300,96 520,58 C740,20 900,100 1120,64 C1280,38 1380,52 1440,46 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Documento ===================== -->
+<section class="section" aria-label="Testo dell'informativa">
+  <div class="container">
+    <div class="legal">
+
+      <nav class="legal__toc" aria-label="Indice del documento">
+        <h2>Indice</h2>
+        <ol>
+          <li><a href="#chi-tratta">Chi tratta i tuoi dati</a></li>
+          <li><a href="#visiti">Se visiti il sito</a></li>
+          <li><a href="#scrivi">Se mi scrivi</a></li>
+          <li><a href="#prenoti">Se prenoti una visita</a></li>
+          <li><a href="#paziente">Se diventi mia paziente o mio paziente</a></li>
+          <li><a href="#fisco">Tessera Sanitaria, fattura e detrazione</a></li>
+          <li><a href="#fornitori">Chi tratta dati per mio conto</a></li>
+          <li><a href="#extra-ue">Trasferimenti fuori dall'Unione Europea</a></li>
+          <li><a href="#conservazione">Per quanto tempo conservo i dati</a></li>
+          <li><a href="#diritti">I tuoi diritti</a></li>
+          <li><a href="#reclamo">Reclami</a></li>
+          <li><a href="#altro">Dati obbligatori e aggiornamenti</a></li>
+        </ol>
+      </nav>
+
+      <div class="prose legal__body">
+        <p class="legal__meta">Informativa ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (GDPR). Ultimo aggiornamento: <mark class="ph" title="Dato da inserire">[DATA]</mark>.</p>
+
+        <div class="callout callout--blu">
+          <p>Questa pagina è divisa in quattro parti: chi visita il sito, chi mi scrive, chi prenota una visita, chi diventa mio paziente. Puoi leggere solo la parte che ti riguarda.</p>
+        </div>
+
+        <h2 id="chi-tratta">1. Chi tratta i tuoi dati</h2>
+        <p>Titolare del trattamento: <strong>Dott.ssa Francesca Bodini</strong>, Medico Chirurgo, Specialista in Scienza dell'Alimentazione, iscritta all'Ordine dei Medici Chirurghi e degli Odontoiatri della provincia di <mark class="ph" title="Dato da inserire">[PROVINCIA ORDINE]</mark> al n. <mark class="ph" title="Dato da inserire">[N. ISCRIZIONE OMCEO]</mark>.</p>
+        <ul>
+          <li>Studio: <mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark>, Milano.</li>
+          <li>Partita IVA: <mark class="ph" title="Dato da inserire">[P.IVA]</mark>. Codice fiscale: <mark class="ph" title="Dato da inserire">[CODICE FISCALE]</mark>.</li>
+          <li>Email: <mark class="ph" title="Dato da inserire">[EMAIL]</mark>. Telefono: <mark class="ph" title="Dato da inserire">[TELEFONO]</mark>.</li>
+        </ul>
+        <p>Non ho nominato un Responsabile della protezione dei dati (DPO) perché non ricorrono le condizioni dell'art. 37 del GDPR: esercito come professionista singola e non effettuo trattamenti su larga scala. Per qualsiasi questione sui tuoi dati scrivi direttamente a <mark class="ph" title="Dato da inserire">[EMAIL]</mark>.</p>
+        <p><strong>Sono un medico e sono tenuta al segreto professionale</strong> ai sensi dell'art. 9, par. 3 del GDPR, dell'art. 622 del codice penale e degli artt. 10 e 11 del Codice di Deontologia Medica. È il fondamento che mi permette di trattare i tuoi dati di salute senza chiederti un consenso privacy separato per le finalità di cura, come chiarito dal Garante per la protezione dei dati personali con il provvedimento n. 55 del 7 marzo 2019.</p>
+
+        <h2 id="visiti">2. Se visiti il sito</h2>
+        <h3>Quali dati raccolgo</h3>
+        <p>Il sito è statico. Quando lo apri, il server e la rete di distribuzione registrano dati tecnici necessari a consegnarti le pagine: indirizzo IP, tipo di browser e di dispositivo, data e ora della richiesta, pagina richiesta, pagina di provenienza. Uso inoltre uno strumento di statistica <strong>senza cookie e senza identificatori individuali</strong>, che mi dice quante persone visitano il sito e quali pagine leggono, senza permettermi di risalire a te.</p>
+        <h3>Perché</h3>
+        <p>Per far funzionare il sito, proteggerlo da abusi e capire quali contenuti sono utili. Base giuridica: mio legittimo interesse (art. 6, par. 1, lett. f del GDPR).</p>
+        <h3>Cookie</h3>
+        <p>Il sito non usa cookie di profilazione né cookie di terze parti a fini pubblicitari. Per questo non vedi un banner di consenso. I dettagli sono nella <a href="cookie.html">Cookie policy</a>.</p>
+        <div class="callout">
+          <p>Le pagine che leggi su questo sito possono rivelare qualcosa sulla tua salute. Per questo ho scelto di non installare strumenti pubblicitari, pixel di social network o strumenti di remarketing: <strong>nessuna piattaforma pubblicitaria sa che sei passato di qui</strong>.</p>
+        </div>
+        <h3>Per quanto tempo</h3>
+        <p>Log tecnici <mark class="ph" title="Dato da inserire">[GIORNI CONSERVAZIONE LOG]</mark> giorni. Statistiche aggregate, che non ti identificano, 24 mesi.</p>
+
+        <h2 id="scrivi">3. Se mi scrivi</h2>
+        <h3>Quali dati raccolgo</h3>
+        <p>Se usi il modulo della pagina <a href="contatti.html">Contatti</a> o mi mandi un'email raccolgo il tuo nome e cognome, il tuo indirizzo email, il numero di telefono se scegli di lasciarlo, l'argomento che selezioni e il contenuto del messaggio che scrivi.</p>
+        <h3>Perché</h3>
+        <p>Per leggere la tua richiesta e risponderti. Base giuridica: misure precontrattuali richieste da te (art. 6, par. 1, lett. b del GDPR) quando mi scrivi in vista di una visita, altrimenti il mio legittimo interesse a rispondere a chi mi contatta (art. 6, par. 1, lett. f).</p>
+        <div class="callout">
+          <p><strong>Non scrivermi qui informazioni sulla tua salute, sui farmaci che assumi o sui tuoi esami.</strong> L'email non è un canale protetto e la risposta utile arriva comunque in visita. Se scegli comunque di scriverle, le tratterò sulla base del tuo consenso esplicito (art. 9, par. 2, lett. a del GDPR), revocabile in qualunque momento: mi basta che tu me lo dica e cancello quel testo.</p>
+        </div>
+        <h3>Per quanto tempo</h3>
+        <p>Conservo i messaggi <mark class="ph" title="Dato da inserire">[MESI CONSERVAZIONE MESSAGGI]</mark> mesi dall'ultima risposta. Se dalla conversazione nasce un percorso di cura, le informazioni utili confluiscono nella tua cartella (punto 5) e seguono i tempi previsti per la documentazione clinica.</p>
+
+        <h2 id="prenoti">4. Se prenoti una visita</h2>
+        <h3>Quali dati raccolgo</h3>
+        <p>Nome e cognome, email, telefono, tipo di visita, data e ora, modalità (in studio o online) e, se scrivi qualcosa nel campo note, il contenuto di quel campo. Se versi la caparra online, il pagamento avviene sulla piattaforma del fornitore di pagamento: <strong>io non vedo mai il numero della tua carta</strong>, ricevo solo la conferma dell'incasso, l'importo e le ultime quattro cifre.</p>
+        <div class="callout">
+          <p><strong>Ti chiedo espressamente di non scrivere nel campo note informazioni sulla tua salute, sui farmaci che assumi o sui tuoi esami.</strong> Ne parliamo in visita, dove sono protetti meglio. Se scegli comunque di scriverle, le tratterò sulla base del tuo consenso esplicito (art. 9, par. 2, lett. a del GDPR), revocabile in qualunque momento scrivendo a <mark class="ph" title="Dato da inserire">[EMAIL]</mark>: cancellerò quel testo.</p>
+        </div>
+        <h3>Perché</h3>
+        <p>Per fissare, confermare, ricordarti e gestire l'appuntamento, incassare la caparra e contattarti se qualcosa cambia. Base giuridica: esecuzione di un contratto e di misure precontrattuali richieste da te (art. 6, par. 1, lett. b del GDPR).</p>
+        <h3>Che cosa vede il calendario</h3>
+        <p>Nel mio calendario l'appuntamento è registrato con il tuo nome e il tipo di visita. Non inserisco nel titolo dell'evento informazioni cliniche.</p>
+        <h3>Promemoria</h3>
+        <p>Ti invio per email la conferma con il file calendario e, prima della visita, un promemoria a 24 ore e uno a un'ora. Fanno parte del servizio che hai prenotato. Se attivi il promemoria via <mark class="ph" title="Dato da inserire">[SMS/WHATSAPP]</mark>, il messaggio contiene solo data, ora e modalità, mai il motivo della visita.</p>
+        <h3>Videochiamata</h3>
+        <p>Le visite online si svolgono su Google Meet. <strong>Non registro mai le videochiamate</strong> e non ne conservo trascrizioni.</p>
+        <h3>Per quanto tempo</h3>
+        <p>Se la prenotazione si trasforma in visita, i dati confluiscono nella tua cartella (punto 5). Se viene annullata o non si presenta nessuno, conservo i dati <mark class="ph" title="Dato da inserire">[MESI CONSERVAZIONE PRENOTAZIONI]</mark> mesi per rimborsi, contestazioni e adempimenti contabili.</p>
+
+        <h2 id="paziente">5. Se diventi mia paziente o mio paziente</h2>
+        <h3>Quali dati raccolgo e produco</h3>
+        <ul>
+          <li>dati anagrafici, contatti, codice fiscale;</li>
+          <li><strong>anamnesi</strong>: storia clinica, patologie diagnosticate, interventi, terapie farmacologiche e integratori in corso, allergie e intolleranze, familiarità, storia del peso, abitudini alimentari, attività fisica, sonno, funzione intestinale, ciclo mestruale, gravidanza o allattamento;</li>
+          <li><strong>esame obiettivo e misure</strong>: peso, altezza, circonferenze, pressione arteriosa, eventuale bioimpedenziometria;</li>
+          <li><strong>esami e referti</strong> che mi porti o che ti richiedo;</li>
+          <li><strong>la diagnosi che formulo</strong>, il <strong>piano dietetico</strong> e le <strong>prescrizioni</strong> di esami o di terapia farmacologica;</li>
+          <li><strong>relazioni e comunicazioni</strong> con altri professionisti che ti seguono, quando le autorizzi;</li>
+          <li>il <strong>consenso informato</strong> che firmi.</li>
+        </ul>
+        <p>Sono in gran parte <strong>dati relativi alla salute</strong>, che il GDPR chiama "categorie particolari" e protegge in modo rafforzato. Alcune informazioni riguardano anche i tuoi familiari, per esempio la familiarità per diabete o obesità: le raccolgo perché sono necessarie a curarti bene, sono coperte dal segreto professionale e non le uso per nessun altro scopo.</p>
+        <h3>Perché e con quale base giuridica</h3>
+        <ul>
+          <li>Per visitarti, formulare la diagnosi, impostare la terapia dietetica ed eventualmente farmacologica, seguirti nei controlli: <strong>art. 9, par. 2, lett. h del GDPR</strong> (medicina preventiva, diagnosi, assistenza e terapia sanitaria), in combinato con l'<strong>art. 9, par. 3</strong> (sono un medico soggetto al segreto professionale) e con l'art. 6, par. 1, lett. b (contratto d'opera professionale). <strong>Per queste finalità di cura non ti chiedo un consenso privacy</strong>: come chiarito dal Garante con il provvedimento n. 55 del 7 marzo 2019, non è necessario.</li>
+          <li><strong>Resta invece necessario, e distinto, il consenso informato all'atto medico</strong>, previsto dalla legge 22 dicembre 2017 n. 219 e dagli artt. 33 e 35 del Codice di Deontologia Medica: te lo spiego e te lo faccio firmare alla prima visita. Lo trovi già online nella pagina <a href="consenso-informato.html">Consenso informato</a>. È un documento diverso da questa informativa e serve a farti scegliere consapevolmente la cura, non a gestire i tuoi dati.</li>
+          <li>Per trattamenti <strong>non necessari alla cura</strong> ti chiedo un <strong>consenso esplicito e separato</strong> (art. 9, par. 2, lett. a del GDPR), che puoi negare o revocare in ogni momento senza conseguenze sul percorso: invio di piano, referti e comunicazioni cliniche via email; scambio di documenti tramite messaggistica; contatto con altri professionisti che non mi hai indicato; conservazione dei dati oltre il termine ordinario per un eventuale percorso futuro.</li>
+          <li>Per fatturare, tenere la contabilità e trasmettere i dati di spesa: <strong>art. 6, par. 1, lett. c del GDPR</strong> (obbligo di legge).</li>
+        </ul>
+        <h3>Chi altro vede i tuoi dati</h3>
+        <p>La tua cartella resta nel mio archivio. Non condivido dati clinici con nessuno senza una tua indicazione esplicita, con le eccezioni previste dalla legge: richiesta dell'Autorità giudiziaria, obblighi fiscali che riguardano importi e non contenuti clinici, obblighi di segnalazione previsti da norme di legge. Se ritengo utile un confronto con il tuo medico di famiglia, con il chirurgo che ti segue o con un altro specialista, te lo propongo e procedo <strong>solo se sei d'accordo</strong>.</p>
+        <p>Se la tua situazione richiede competenze diverse dalle mie, per esempio un percorso psicologico o psichiatrico per un disturbo del comportamento alimentare, te lo dico con chiarezza e ti indico a chi rivolgerti. La condivisione di informazioni con quei professionisti avviene solo con il tuo consenso.</p>
+        <h3>Visite online</h3>
+        <p>La visita online è un atto medico a distanza. Si applicano le stesse regole di riservatezza della visita in studio. <strong>Non registro la videochiamata.</strong> Ti chiedo di collegarti da un luogo riservato: quello che succede dalla tua parte dello schermo non posso proteggerlo io.</p>
+
+        <h2 id="fisco">6. Tessera Sanitaria, fattura e detrazione</h2>
+        <p><strong>Sistema Tessera Sanitaria.</strong> Come medico sono tenuta a trasmettere al Sistema Tessera Sanitaria i dati delle spese che sostieni, perché compaiano nella tua dichiarazione dei redditi precompilata. <strong>Puoi opporti</strong>: dimmelo prima o al momento del pagamento e ne prendo nota sul documento fiscale, oppure comunicalo direttamente all'Agenzia delle Entrate o dall'area riservata del Sistema Tessera Sanitaria nelle finestre che l'Agenzia pubblica ogni anno. Opponendoti <strong>non perdi la detrazione</strong>: dovrai però conservare tu la documentazione della spesa.</p>
+        <p><strong>Fattura.</strong> Per le prestazioni sanitarie rese a persone fisiche la legge <strong>vieta</strong> l'emissione della fattura elettronica attraverso il Sistema di Interscambio, proprio per proteggere i dati sanitari. Ricevi quindi una fattura cartacea o un documento in formato digitale che ti consegno o ti invio direttamente.</p>
+
+        <h2 id="fornitori">7. Chi tratta dati per mio conto</h2>
+        <p>I fornitori elencati qui sotto sono responsabili del trattamento, nominati ai sensi dell'art. 28 del GDPR.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Tabella dei fornitori">
+        <table>
+          <caption class="visually-hidden">Fornitori, servizio erogato e collocazione</caption>
+          <thead>
+            <tr><th scope="col">Fornitore</th><th scope="col">Cosa fa</th><th scope="col">Dove</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Cal.com, Inc.</td><td>Sistema di prenotazione online</td><td>USA, con clausole contrattuali standard</td></tr>
+            <tr><td>Google Ireland Ltd e Google LLC</td><td>Email, calendario, videochiamate</td><td>Irlanda, con trasferimenti negli USA coperti da clausole contrattuali standard e adesione all'EU-U.S. Data Privacy Framework</td></tr>
+            <tr><td>Stripe Payments Europe Ltd</td><td>Incasso della caparra</td><td>Irlanda</td></tr>
+            <tr><td>Vercel Inc.</td><td>Hosting del sito</td><td>USA, con clausole contrattuali standard</td></tr>
+            <tr><td><mark class="ph" title="Dato da inserire">[FORNITORE ANALYTICS]</mark></td><td>Statistiche anonime senza cookie</td><td>Unione Europea</td></tr>
+            <tr><td><mark class="ph" title="Dato da inserire">[NOME COMMERCIALISTA]</mark></td><td>Contabilità e fatturazione</td><td>Italia</td></tr>
+            <tr><td><mark class="ph" title="Dato da inserire">[GESTIONALE CARTELLE, SE USATO]</mark></td><td>Archivio della documentazione clinica</td><td><mark class="ph" title="Dato da inserire">[PAESE]</mark></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h2 id="extra-ue">8. Trasferimenti fuori dall'Unione Europea</h2>
+        <p>Alcuni fornitori hanno sede negli Stati Uniti. I trasferimenti avvengono sulla base della decisione di adeguatezza della Commissione europea del 10 luglio 2023 relativa all'EU-U.S. Data Privacy Framework e, in ogni caso, delle clausole contrattuali standard approvate dalla Commissione (art. 46, par. 2, lett. c del GDPR). Puoi chiedermi copia delle garanzie scrivendo a <mark class="ph" title="Dato da inserire">[EMAIL]</mark>.</p>
+
+        <h2 id="conservazione">9. Per quanto tempo conservo i dati</h2>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Tabella dei tempi di conservazione">
+        <table>
+          <caption class="visually-hidden">Categorie di dati e tempi di conservazione</caption>
+          <thead>
+            <tr><th scope="col">Categoria</th><th scope="col">Termine</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Log tecnici del sito</td><td><mark class="ph" title="Dato da inserire">[GIORNI CONSERVAZIONE LOG]</mark> giorni</td></tr>
+            <tr><td>Statistiche aggregate</td><td>24 mesi</td></tr>
+            <tr><td>Messaggi ricevuti dal modulo contatti o via email</td><td><mark class="ph" title="Dato da inserire">[MESI CONSERVAZIONE MESSAGGI]</mark> mesi</td></tr>
+            <tr><td>Prenotazione annullata o non seguita da visita</td><td><mark class="ph" title="Dato da inserire">[MESI CONSERVAZIONE PRENOTAZIONI]</mark> mesi</td></tr>
+            <tr><td>Cartella clinica, referti, prescrizioni, piani dietetici, consenso informato</td><td>Almeno 10 anni dall'ultima prestazione</td></tr>
+            <tr><td>Documentazione di pazienti minorenni</td><td>10 anni dal compimento del diciottesimo anno</td></tr>
+            <tr><td>Fatture e documenti contabili</td><td>10 anni</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Il termine di dieci anni per la documentazione clinica è allineato alla prescrizione ordinaria della responsabilità contrattuale e mi serve a documentare il mio operato e a garantire la tua continuità di cura. Scaduto il termine distruggo in modo sicuro o rendo anonimi i dati.</p>
+        <p>Se cesso l'attività, la tua documentazione clinica viene gestita così: <mark class="ph" title="Dato da inserire">[SCELTA SU CESSAZIONE ATTIVITÀ]</mark>.</p>
+
+        <h2 id="diritti">10. I tuoi diritti</h2>
+        <p>Puoi chiedermi di: accedere ai tuoi dati e averne copia (art. 15), correggerli (art. 16), cancellarli (art. 17), limitarne il trattamento (art. 18), riceverli in formato leggibile da un computer o farli trasferire a un altro professionista (art. 20), opporti al trattamento fondato sul legittimo interesse (art. 21), revocare i consensi facoltativi prestati (art. 7, par. 3), senza che questo pregiudichi la liceità di quanto fatto prima.</p>
+        <p>Scrivi a <mark class="ph" title="Dato da inserire">[EMAIL]</mark>: ti rispondo entro un mese.</p>
+        <p>Alcuni diritti sono limitati quando la legge o la deontologia mi impongono di conservare la documentazione: per esempio non posso cancellare la cartella clinica di un percorso già svolto, né le fatture. Puoi però sempre ottenerne copia.</p>
+
+        <h2 id="reclamo">11. Reclami</h2>
+        <p>Se ritieni che io abbia trattato i tuoi dati in modo scorretto puoi rivolgerti al <strong>Garante per la protezione dei dati personali</strong>, Piazza Venezia 11, 00187 Roma, <a href="https://www.garanteprivacy.it" rel="noopener">www.garanteprivacy.it</a>, oppure all'autorità dello Stato dell'Unione in cui risiedi. Puoi anche rivolgerti all'Ordine dei Medici Chirurghi e degli Odontoiatri di <mark class="ph" title="Dato da inserire">[PROVINCIA ORDINE]</mark>.</p>
+
+        <h2 id="altro">12. Dati obbligatori e aggiornamenti</h2>
+        <p><strong>Obbligatorietà.</strong> Nome, contatti e dati necessari alla visita sono indispensabili: senza, non posso fissare né svolgere la prestazione in sicurezza. Anamnesi completa e terapie in corso sono indispensabili alla sicurezza della cura: informazioni incomplete possono rendere il piano inadatto o rischioso. Tutti gli altri campi sono facoltativi.</p>
+        <p><strong>Nessuna decisione automatizzata.</strong> Non uso i tuoi dati per profilazione né per decisioni automatizzate ai sensi dell'art. 22 del GDPR. Diagnosi, piano e prescrizioni sono decisi da me.</p>
+        <p><strong>Nessuna intelligenza artificiale sui tuoi dati clinici.</strong> Non carico i tuoi dati di salute su servizi di intelligenza artificiale generativa. <mark class="ph" title="Dato da confermare">[DA CONFERMARE SE RESTA VERO]</mark></p>
+        <p><strong>Nessun marketing non richiesto.</strong> Non ti iscrivo a newsletter e non ti mando materiale promozionale, salvo che tu me lo chieda con un consenso separato e revocabile.</p>
+        <p><strong>Aggiornamenti.</strong> Se cambio strumenti o modalità aggiorno questa pagina e indico la nuova data in alto. Se il cambiamento è significativo te lo comunico.</p>
+
+        <div class="callout">
+          <p>Documenti collegati: <a href="cookie.html">Cookie policy</a>, <a href="consenso-informato.html">Consenso informato</a>, <a href="condizioni.html">Condizioni di prenotazione e disdetta</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Wave E: two crests, deeper dive -->
+  <div class="wave wave--mare-profondo wave--deep" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" fill-opacity=".35" d="M0,52 C220,10 420,96 660,54 C900,12 1100,90 1300,58 C1380,46 1420,48 1440,50 L1440,120 L0,120 Z"/><path fill="currentColor" d="M0,70 C200,20 380,100 600,60 C820,20 1000,110 1220,70 C1320,52 1390,60 1440,66 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+<!-- ===================== CTA finale ===================== -->
+<section class="final final--flat" aria-labelledby="privacy-final-title">
+  <div class="container reveal">
+    <h2 id="privacy-final-title">Il primo passo è una visita.</h2>
+    <p class="lead">Nessun impegno oltre la prima visita. Ti ascolto, ti spiego cosa vedo negli esami e come lavoro, e decidiamo insieme se proseguire.</p>
+    <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="final__sub">In studio a Milano o online. Caparra rimborsabile fino a 24 ore prima.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== Footer (identical on every page) ===================== -->
+<footer class="footer" aria-label="Contatti e note legali">
+  <div class="container">
+    <h2 class="visually-hidden">Contatti e note legali</h2>
+    <p class="footer__desc">Dott.ssa Francesca Bodini, Medico Chirurgo, Specialista in Scienza dell'Alimentazione. Visite mediche nutrizionali in studio a Milano e online.</p>
+    <div class="footer__grid">
+      <div>
+        <h3>Studio</h3>
+        <ul>
+          <li><mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark></li>
+          <li>Milano</li>
+          <li>Tel. <mark class="ph" title="Dato da inserire">[TELEFONO]</mark></li>
+          <li><mark class="ph" title="Dato da inserire">[EMAIL]</mark></li>
+          <li><a href="contatti.html">Come arrivare</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Orari</h3>
+        <ul>
+          <li><mark class="ph" title="Dato da inserire">[ORARI]</mark></li>
+          <li>Visite online su appuntamento</li>
+          <li><a href="prenota.html#widget">Prenota online</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Link legali</h3>
+        <ul>
+          <li><a href="privacy.html">Informativa privacy</a></li>
+          <li><a href="cookie.html">Cookie policy</a></li>
+          <li><a href="consenso-informato.html">Consenso informato</a></li>
+          <li><a href="condizioni.html">Condizioni di prenotazione e disdetta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Note</h3>
+        <ul class="footer__note">
+          <li>P.IVA <mark class="ph" title="Dato da inserire">[P.IVA]</mark></li>
+          <li>Iscritta all'Ordine dei Medici Chirurghi e Odontoiatri di <mark class="ph" title="Dato da inserire">[PROVINCIA ORDINE]</mark>, n. <mark class="ph" title="Dato da inserire">[N. ISCRIZIONE OMCEO]</mark></li>
+          <li>Assicurazione RC professionale <mark class="ph" title="Dato da inserire">[COMPAGNIA ASSICURATIVA]</mark>, polizza n. <mark class="ph" title="Dato da inserire">[N. POLIZZA]</mark>, massimale <mark class="ph" title="Dato da inserire">[MASSIMALE]</mark></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disclaimer">Le informazioni di questo sito hanno scopo informativo e non sostituiscono la visita medica. In caso di urgenza rivolgiti al tuo medico curante o ai servizi di emergenza.</p>
+    <div class="footer__bottom">
+      <p>&copy; <mark class="ph" title="Dato da inserire">[ANNO]</mark> Dott.ssa Francesca Bodini. Tutti i diritti riservati.</p>
+      <p>Foto su Unsplash: <a href="https://unsplash.com/photos/GSmBJZ43vvQ" rel="noopener">Alen Smola</a>, <a href="https://unsplash.com/photos/j5almO1E8rU" rel="noopener">Artem Beliaikin</a>, <a href="https://unsplash.com/photos/2pia6OAe5rA" rel="noopener">Annie Spratt</a>, <a href="https://unsplash.com/photos/qEswHvOmi1c" rel="noopener">Lionello DelPiccolo</a>, <a href="https://unsplash.com/photos/EzH46XCDQRY" rel="noopener">Maarten van den Heuvel</a>, <a href="https://unsplash.com/photos/1SJRLmhnmaA" rel="noopener">Nathan Dumlao</a>; altre foto di cibo: <a href="https://unsplash.com/photos/a-colorful-salad-bowl-with-many-fresh-ingredients-_vy3L5n8VnI" rel="noopener">insalata</a>, <a href="https://unsplash.com/photos/fresh-vegetables-on-market-stall-Zaiuy5dKeCk" rel="noopener">verdure al mercato</a>, <a href="https://unsplash.com/photos/a-bowl-filled-with-different-types-of-vegetables-jrs4j6k6QKA" rel="noopener">bowl</a>, <a href="https://unsplash.com/photos/red-and-black-berries-on-white-ceramic-plate-xXrnMYeBcgI" rel="noopener">frutti di bosco</a>, <a href="https://unsplash.com/photos/a-row-of-colorful-peppers-sitting-on-top-of-a-white-table-jUpIxBfRIVY" rel="noopener">peperoni</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cta-bar" id="cta-bar">
+  <a class="btn btn--primary btn--block" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>

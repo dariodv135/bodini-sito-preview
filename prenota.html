@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visite e prenotazione online | Dott.ssa Bodini, Milano</title>
+<meta name="description" content="Prima visita medica nutrizionale di 60-75 minuti e controlli di 30 minuti, in studio a Milano o online. Prenota in autonomia, caparra rimborsabile.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B2A3F">
+<!-- Riattivare quando l'URL reale è noto, con href assoluto al posto di [URL SITO]:
+<link rel="canonical" href="[URL SITO]/prenota.html"> -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dott.ssa Francesca Bodini, Medico specialista in Scienza dell'Alimentazione">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Visite e prenotazione online | Dott.ssa Bodini, Milano">
+<meta property="og:description" content="Prima visita medica nutrizionale di 60-75 minuti e controlli di 30 minuti, in studio a Milano o online. Prenota in autonomia, caparra rimborsabile.">
+<!-- Fonts are self hosted in assets/fonts/ (see styles.css): no request leaves the site -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage-grotesque-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/figtree-latin.woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style data-page="prenota">
+/* Page specific rules only, every selector prefixed with .page--prenota */
+
+/* Visits: two service blocks side by side (7/5), the first one carries the mode switch */
+/* The bottom padding leaves room for the closing wave under the two service blocks */
+.page--prenota .visits{padding-block:calc(var(--section)*.75) calc(var(--section)*1.2)}
+.page--prenota .service h2{font-size:clamp(1.56rem,1.3rem + 1.2vw,2.2rem);margin:0 0 .6rem}
+.page--prenota .service h3{font-family:var(--font-display);font-weight:600;font-size:1.05rem;letter-spacing:0;color:var(--abisso);margin:1.6rem 0 .6rem}
+.page--prenota .service .price{margin:.1rem 0 .2rem}
+.page--prenota .service .actions{margin-top:1.6rem}
+.page--prenota .service--control{border-top-color:var(--mare)}
+.page--prenota .service--control .price{color:var(--mare)}
+.page--prenota .mode-panel{grid-template-columns:5fr 7fr;align-items:start}
+/* The optional consent (health data written in the note field) is set apart from the three
+   required ones by a rule, so nobody reads it as a fourth mandatory box */
+.page--prenota .consent--opt{margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--sale)}
+.page--prenota .mode-panel .checklist{gap:.45rem}
+.page--prenota .mode-panel .checklist li{font-size:var(--t-m)}
+.page--prenota .mode__where{margin:0 0 .6rem;font-weight:600;color:var(--inchiostro)}
+
+/* What to bring: photo on the left, list on the right, on sand */
+.page--prenota .bring{padding-block:calc(var(--section)*.95) calc(var(--section)*1.15)}
+.page--prenota .bring__fig{margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);aspect-ratio:4/5;background:var(--cielo)}
+.page--prenota .bring__fig img{width:100%;height:100%;object-fit:cover}
+.page--prenota .bring .checklist{gap:.7rem;margin-top:1.2rem}
+.page--prenota .bring .checklist li{font-size:1.02rem;color:var(--inchiostro)}
+.page--prenota .bring .checklist li::before{border-color:var(--mare)}
+.page--prenota .bring__note{margin-top:1.4rem;font-size:var(--t-m);color:var(--inchiostro-2)}
+
+/* Online: three short lines on deep water */
+.page--prenota .online{padding-block:calc(var(--section)*1.05) calc(var(--section)*1.3)}
+.page--prenota .online__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,3rem);margin-top:.5rem}
+.page--prenota .online__grid h3{font-size:1.2rem;margin-bottom:.4rem;padding-top:.9rem;border-top:1px solid rgba(242,247,250,.25)}
+.page--prenota .online__grid p{margin:0;font-size:1rem}
+.page--prenota .online__note{margin:2.5rem 0 0;padding:1rem 1.2rem;border-radius:12px;background:rgba(242,247,250,.1);border:1px solid rgba(242,247,250,.22);font-size:var(--t-m);max-width:60ch}
+.page--prenota .online__note strong{color:var(--cielo)}
+
+/* Booking */
+.page--prenota .book{padding-block:calc(var(--section)*.95) calc(var(--section)*1.1);scroll-margin-top:var(--header-h)}
+.page--prenota .book .section-head{margin-bottom:clamp(1.5rem,4vw,2.5rem)}
+
+/* Invoice note */
+.page--prenota .invoice{padding-block:calc(var(--section)*.8) calc(var(--section)*.95)}
+.page--prenota .invoice .prose p{color:var(--inchiostro)}
+.page--prenota .invoice__facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;list-style:none;margin:1.8rem 0 0}
+.page--prenota .invoice__facts li{max-width:none;padding-top:.9rem;border-top:2px solid var(--abisso);font-size:var(--t-m);color:var(--inchiostro-2)}
+.page--prenota .invoice__facts strong{display:block;font-family:var(--font-display);font-size:1.15rem;color:var(--abisso);margin-bottom:.3rem}
+
+@media (max-width:899px){
+  .page--prenota .online__grid{grid-template-columns:1fr;gap:1.25rem}
+  .page--prenota .bring__fig{aspect-ratio:16/10;max-width:560px}
+  .page--prenota .invoice__facts{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body class="page page--prenota">
+<!-- The .js class hides every .reveal until main.js shows it: if main.js never arrives
+     (404, broken cache, network error) the class is dropped again after 4s and the page
+     falls back to its no-JS presentation, fully readable. -->
+<script>(function(d){d.classList.add('js');setTimeout(function(){if(!window.BodiniSite)d.classList.remove('js');},4000);})(document.documentElement);</script>
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- ===================== Header (identical on every page, only aria-current changes) ===================== -->
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Dott.ssa Francesca Bodini, vai alla home">
+      <span class="brand__name">Dott.ssa Francesca Bodini</span>
+      <span class="brand__role">Medico specialista in Scienza dell'Alimentazione</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri il menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav-menu" aria-label="Navigazione principale">
+      <ul class="nav__list">
+        <li><a href="chi-sono.html">Chi sono</a></li>
+        <li><a href="percorsi.html">Percorsi</a></li>
+        <li><a href="prenota.html" aria-current="page">Visite e prenota</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+      <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<!-- tabindex="-1": without it Safari moves the scroll but leaves focus on the skip link -->
+<main id="main" tabindex="-1">
+
+<!-- ===================== Page hero ===================== -->
+<section class="page-hero" aria-labelledby="prenota-page-title">
+  <div class="container page-hero__grid">
+    <div class="page-hero__text">
+      <span class="kicker reveal">Visite e prenota</span>
+      <h1 id="prenota-page-title" class="reveal reveal--clip">Due visite, un percorso chiaro.</h1>
+      <p class="page-hero__sub reveal" data-delay="1">Si parte sempre da una prima visita medica nutrizionale. Poi ci vediamo per i controlli, con la frequenza che ha senso per te. Prenoti online, in pochi minuti, senza telefonate.</p>
+    </div>
+    <figure class="page-hero__media reveal">
+      <img src="assets/cibo-bowl.jpg" srcset="assets/cibo-bowl-480.jpg 480w, assets/cibo-bowl-800.jpg 800w, assets/cibo-bowl.jpg 1400w" sizes="(max-width:899px) 92vw, 40vw" width="1400" height="1050" alt="Bowl vista dall'alto con pollo speziato, ceci, cetrioli, peperoni, pomodori e cipolla rossa." loading="eager" fetchpriority="high" decoding="async">
+    </figure>
+  </div>
+  <!-- Wave B: single crest, mirrored -->
+  <div class="wave wave--schiuma" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,50 C240,90 460,30 740,70 C1020,110 1200,30 1440,80 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Le visite ===================== -->
+<section class="section visits" id="visite" aria-labelledby="visits-title">
+  <div class="container">
+    <h2 id="visits-title" class="visually-hidden">Le visite</h2>
+    <div class="services">
+
+      <!-- Prima visita -->
+      <article class="service reveal" aria-labelledby="svc-prima">
+        <h2 id="svc-prima">Prima visita medica nutrizionale</h2>
+        <p class="meta-row"><span><strong>Durata</strong> 60-75 minuti</span><span><strong>Modalità</strong> In studio a Milano &middot; Online</span><span><strong>Piano</strong> entro <mark class="ph" title="Dato da inserire">[GIORNI]</mark> giorni, via email</span></p>
+        <p class="price"><mark class="ph" title="Dato da inserire">[TARIFFA PRIMA VISITA]</mark></p>
+        <h3>Cosa include</h3>
+        <ol>
+          <li>Anamnesi medica e alimentare: storia clinica, terapie in corso, familiarità, abitudini, gusti, orari, cosa ti riesce facile e cosa no.</li>
+          <li>Esame obiettivo e misure: peso, altezza, circonferenze e, in studio, bioimpedenziometria <mark class="ph" title="Dato da inserire">[SE DISPONIBILE]</mark>.</li>
+          <li>Lettura degli esami che porti e valutazione del quadro metabolico.</li>
+          <li>Eventuale prescrizione di esami di approfondimento o di terapie, se la visita lo indica.</li>
+          <li>Definizione condivisa del percorso e piano personalizzato consegnato entro <mark class="ph" title="Dato da inserire">[GIORNI]</mark> giorni, con indicazioni pratiche per la spesa e i pasti fuori casa.</li>
+        </ol>
+        <h3 id="mode-label">In studio o online</h3>
+        <div class="segmented" role="group" aria-labelledby="mode-label">
+          <button type="button" data-mode="studio" aria-pressed="true" aria-controls="mode-studio">In studio</button>
+          <button type="button" data-mode="online" aria-pressed="false" aria-controls="mode-online">Online</button>
+        </div>
+        <div class="mode-panel" id="mode-studio">
+          <!-- assets/studio.jpg is a stock photo, not the real studio: the badge says so.
+               Replace with assets/studio-reale.jpg when available, then remove the figcaption. -->
+          <figure class="mode__fig"><img src="assets/studio.jpg" srcset="assets/studio-480.jpg 480w, assets/studio-800.jpg 800w, assets/studio.jpg 1000w" sizes="(max-width:899px) 92vw, 30vw" width="1000" height="750" alt="Stanza luminosa con due finestre, scrivania in legno e piante verdi." loading="lazy" decoding="async"><figcaption class="portrait__badge">Immagine provvisoria</figcaption></figure>
+          <div>
+            <p class="mode__where">A Milano, in <mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark></p>
+            <ul class="checklist">
+              <li>Esame obiettivo e misure prese direttamente in studio.</li>
+              <li>Bioimpedenziometria <mark class="ph" title="Dato da inserire">[SE DISPONIBILE]</mark>.</li>
+              <li>Porti esami e diario alimentare in cartaceo o sul telefono.</li>
+              <li>Prescrizioni consegnate a mano.</li>
+              <li>Saldo in studio al termine.</li>
+              <li>Abbigliamento comodo.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mode-panel" id="mode-online" hidden>
+          <figure class="mode__fig"><img src="assets/cibo-tavola-mediterranea.jpg" srcset="assets/cibo-tavola-mediterranea-480.jpg 480w, assets/cibo-tavola-mediterranea-800.jpg 800w, assets/cibo-tavola-mediterranea.jpg 1600w" sizes="(max-width:639px) 92vw, 30vw" width="1600" height="1000" alt="Verdure fresche viste dall'alto su fondo chiaro: peperoni, carote, cavolini di Bruxelles, broccoli e avocado." loading="lazy" decoding="async"></figure>
+          <div>
+            <p class="mode__where">Da casa tua, su Google Meet</p>
+            <ul class="checklist">
+              <li>Misure guidate: ti spiego come prenderle prima della visita.</li>
+              <li>Analisi della composizione corporea non disponibile.</li>
+              <li>Carichi esami e diario alimentare prima della visita.</li>
+              <li>Prescrizioni inviate via email in formato digitale.</li>
+              <li>Saldo con bonifico dopo la visita.</li>
+              <li>Connessione stabile e un posto tranquillo.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn btn--primary" href="#widget">Prenota la prima visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="link-arrow" href="percorsi.html">Scopri i percorsi <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Controllo -->
+      <article class="service service--control reveal" data-delay="1" aria-labelledby="svc-controllo">
+        <h2 id="svc-controllo">Visita di controllo</h2>
+        <p class="meta-row"><span><strong>Durata</strong> 30 minuti</span><span><strong>Modalità</strong> In studio a Milano &middot; Online</span></p>
+        <p class="price"><mark class="ph" title="Dato da inserire">[TARIFFA CONTROLLO]</mark></p>
+        <h3>Cosa include</h3>
+        <ul>
+          <li>Come è andata: cosa ha funzionato, cosa è stato difficile, cosa è cambiato.</li>
+          <li>Aggiornamento delle misure (in studio) e lettura di eventuali nuovi esami.</li>
+          <li>Verifica delle terapie in corso, se ci sono, e degli effetti che hai notato.</li>
+          <li>Modifiche al piano, per seguirti nelle stagioni e nei cambiamenti di routine.</li>
+          <li>Spazio per le domande e per ritrovare la motivazione quando cala.</li>
+        </ul>
+        <p class="service__note"><strong>Frequenza consigliata:</strong> ogni 3-4 settimane nei primi mesi, più ravvicinata nelle fasi che lo richiedono (dieta chetogenica, terapia farmacologica, dopo un intervento), poi a intervalli più lunghi.</p>
+        <div class="actions">
+          <a class="btn btn--secondary" href="#widget">Prenota un controllo <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <!-- Wave A: single crest. Without it this would be the only junction of the site where two
+       grounds meet on a straight line (schiuma to sabbia) -->
+  <div class="wave wave--sabbia" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,80 C240,30 420,110 700,70 C980,30 1200,90 1440,50 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Cosa portare ===================== -->
+<section class="section section--sabbia bring" id="cosa-portare" aria-labelledby="bring-title">
+  <div class="container grid-2 grid-2--5-7 grid-2--center">
+    <div class="reveal">
+      <figure class="bring__fig">
+        <img src="assets/cibo-verticale.jpg" srcset="assets/cibo-verticale-480.jpg 480w, assets/cibo-verticale-800.jpg 800w, assets/cibo-verticale.jpg 1000w" sizes="(max-width:899px) 92vw, 40vw" width="1000" height="1300" alt="Fila di peperoni gialli, arancioni e rossi su un tavolo bianco." loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <div>
+      <span class="kicker reveal" data-delay="1">Prima della visita</span>
+      <h2 id="bring-title" class="reveal reveal--clip" data-delay="1">Cosa portare alla prima visita</h2>
+      <ul class="checklist reveal" data-delay="2">
+        <li>Esami del sangue recenti, fatti negli ultimi sei mesi, se li hai. Se non li hai, va bene lo stesso: valuto in visita se prescriverli.</li>
+        <li>Referti di visite ed esami specialistici, se ne hai (ecografie, visite cardiologiche, endocrinologiche, diabetologiche).</li>
+        <li>L'elenco delle terapie e degli integratori che prendi, con i dosaggi.</li>
+        <li>Un diario alimentare di tre giorni: dopo la prenotazione ti mando un modello semplice da compilare.</li>
+        <li>Per la chirurgia bariatrica: la documentazione del centro chirurgico, se già disponibile.</li>
+        <li>In studio: abiti comodi per le misure.</li>
+      </ul>
+      <p class="bring__note reveal" data-delay="3">Per la visita online carichi esami, referti e diario prima dell'appuntamento, dal link che ricevi con la conferma.</p>
+    </div>
+  </div>
+  <!-- Wave C: two overlapping crests -->
+  <div class="wave wave--mare-profondo" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" fill-opacity=".3" d="M0,58 C180,26 320,84 540,46 C760,8 920,88 1140,52 C1290,28 1390,40 1440,36 L1440,120 L0,120 Z"/><path fill="currentColor" d="M0,72 C160,40 300,96 520,58 C740,20 900,100 1120,64 C1280,38 1380,52 1440,46 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Come funziona la visita online ===================== -->
+<section class="section section--mare online" id="online" aria-labelledby="online-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker reveal">Online</span>
+      <h2 id="online-title" class="reveal reveal--clip">Come funziona la visita online</h2>
+      <p class="lead reveal" data-delay="1">Come in studio, solo che ci vediamo su Google Meet. Non devi installare nulla.</p>
+    </div>
+    <div class="online__grid">
+      <div class="reveal">
+        <h3>Il link arriva via email</h3>
+        <p>Nell'email di conferma trovi il link Google Meet: basta un clic dal telefono o dal computer, senza installazioni.</p>
+      </div>
+      <div class="reveal" data-delay="1">
+        <h3>Prima dell'appuntamento</h3>
+        <p>Ti chiedo di caricare esami, referti e diario alimentare e di prenderti le misure seguendo le indicazioni che ti invio.</p>
+      </div>
+      <div class="reveal" data-delay="2">
+        <h3>Durante la visita</h3>
+        <p>Scegli un posto tranquillo, con una connessione stabile, e tieni a portata di mano le confezioni dei farmaci che prendi. Eventuali prescrizioni ti arrivano via email in formato digitale.</p>
+      </div>
+    </div>
+    <p class="online__note reveal" data-delay="2"><strong>Nota:</strong> per alcune situazioni cliniche la prima visita in studio è preferibile. Se hai dubbi, <a href="contatti.html">scrivimi</a> prima di prenotare.</p>
+  </div>
+  <!-- Wave F: single crest, shallow -->
+  <div class="wave wave--schiuma" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,58 C220,100 400,30 640,66 C880,102 1060,24 1280,60 C1360,72 1410,70 1440,64 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Prenota (demo widget) ===================== -->
+<section class="section book" id="widget" aria-labelledby="book-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker reveal">Prenota</span>
+      <h2 id="book-title" class="reveal reveal--clip">Prenota la tua visita.</h2>
+      <p class="lead reveal" data-delay="1">Scegli la visita, la data e l'orario. In pochi minuti hai la conferma in casella, senza telefonate.</p>
+    </div>
+    <div class="booking">
+      <div class="widget reveal" id="booking-widget">
+        <ol class="widget__steps" aria-label="Passaggi della prenotazione">
+          <li aria-current="step" data-step="1"><span class="n" aria-hidden="true">1</span>Visita</li>
+          <li data-step="2"><span class="n" aria-hidden="true">2</span>Data e ora</li>
+          <li data-step="3"><span class="n" aria-hidden="true">3</span>I tuoi dati</li>
+        </ol>
+        <p class="widget__demo"><strong>Anteprima:</strong> questa è una demo, nessun dato viene inviato e nessun consenso viene registrato. In produzione la prenotazione avviene su Cal.com, con pagamento sicuro Stripe.</p>
+        <noscript><p class="widget__demo">Per usare l'anteprima della prenotazione serve JavaScript. Puoi comunque scrivere a <mark class="ph" title="Dato da inserire">[EMAIL]</mark> o telefonare al <mark class="ph" title="Dato da inserire">[TELEFONO]</mark>.</p></noscript>
+
+        <!-- Step 1 -->
+        <div class="widget__panel" id="panel-1" data-panel="1">
+          <h3 tabindex="-1">Cosa vuoi prenotare?</h3>
+          <fieldset>
+            <legend>Visita</legend>
+            <div class="opt">
+              <label><input type="radio" name="service" value="prima" checked data-label="Prima visita medica nutrizionale" data-min="75"><span><span class="opt__t">Prima visita medica nutrizionale</span><br><span class="opt__m">60-75 min &middot; <mark class="ph" title="Dato da inserire">[TARIFFA PRIMA VISITA]</mark></span></span></label>
+              <label><input type="radio" name="service" value="controllo" data-label="Visita di controllo" data-min="30"><span><span class="opt__t">Visita di controllo</span><br><span class="opt__m">30 min &middot; <mark class="ph" title="Dato da inserire">[TARIFFA CONTROLLO]</mark></span></span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Modalità</legend>
+            <div class="opt opt--row">
+              <label><input type="radio" name="mode" value="studio" checked data-label="In studio"><span><span class="opt__t">In studio</span><br><span class="opt__m">a Milano</span></span></label>
+              <label><input type="radio" name="mode" value="online" data-label="Online"><span><span class="opt__t">Online</span><br><span class="opt__m">su Google Meet</span></span></label>
+            </div>
+          </fieldset>
+          <p class="widget__hint">Prima volta qui? Parti dalla prima visita medica.</p>
+          <div class="widget__actions">
+            <span></span>
+            <button type="button" class="btn btn--primary" data-next="2">Continua <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="widget__panel" id="panel-2" data-panel="2" hidden>
+          <h3 tabindex="-1">Quando ti è comodo?</h3>
+          <p class="widget__hint">Gli orari sono mostrati nel tuo fuso orario (<span id="tz"><mark class="ph" title="Dato da inserire">[FUSO ORARIO]</mark></span>).</p>
+          <div class="days" id="days" role="group" aria-label="Scegli il giorno"></div>
+          <p class="slots__title" id="slots-title">Orari disponibili</p>
+          <!-- Announces how the slot list changed after a day is picked (WCAG 4.1.3) -->
+          <p class="visually-hidden" id="slots-status" aria-live="polite"></p>
+          <div class="slots" id="slots" role="group" aria-labelledby="slots-title"></div>
+          <p class="field__err" id="err-step2" aria-live="polite"></p>
+          <div class="widget__actions">
+            <button type="button" class="btn btn--secondary" data-prev="1">Indietro</button>
+            <button type="button" class="btn btn--primary" data-next="3">Continua <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <form class="widget__panel" id="panel-3" data-panel="3" novalidate hidden>
+          <h3 tabindex="-1">Dimmi chi sei</h3>
+          <div class="fields--2">
+            <div class="field">
+              <label for="f-name">Nome e cognome</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="err-name">
+              <p class="field__err" id="err-name"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="err-email">
+              <p class="field__err" id="err-email"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-tel">Telefono <small>(facoltativo)</small></label>
+            <input id="f-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="field">
+            <label for="f-note">Note per la dottoressa <small>(facoltativo)</small></label>
+            <textarea id="f-note" name="note" rows="3" aria-describedby="note-hint"></textarea>
+            <p class="widget__hint" id="note-hint">Solo indicazioni organizzative (per esempio come raggiungere lo studio). Non inserire qui informazioni sulla tua salute: ne parliamo in visita.</p>
+          </div>
+          <div class="consent">
+            <!-- No broad "consento al trattamento dei dati di salute (art. 9)" here: privacy.html
+                 says that for the purposes of care no privacy consent is asked (art. 9.3 GDPR,
+                 Garante 55/2019), so asking for it on the booking form would contradict the
+                 informativa. The art. 9.2(a) consent survives only where it has an object,
+                 the free-text note field, and it is optional (see below). -->
+            <label><input type="checkbox" id="c-privacy" required aria-describedby="err-consent"><span>Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa sulla privacy<span class="visually-hidden"> (si apre in una nuova scheda)</span></a> e ho capito come tratti i miei dati.</span></label>
+            <label><input type="checkbox" id="c-consenso" required aria-describedby="err-consent"><span>Ho letto il <a href="consenso-informato.html" target="_blank" rel="noopener">consenso informato<span class="visually-hidden"> (si apre in una nuova scheda)</span></a> alla visita medica nutrizionale e lo confermerò in visita.</span></label>
+            <label><input type="checkbox" id="c-condizioni" required aria-describedby="err-consent"><span>Ho letto le <a href="condizioni.html" target="_blank" rel="noopener">condizioni di prenotazione e disdetta<span class="visually-hidden"> (si apre in una nuova scheda)</span></a>.</span></label>
+          </div>
+          <p class="field__err" id="err-consent" aria-live="polite"></p>
+          <div class="consent consent--opt">
+            <label><input type="checkbox" id="c-note-salute"><span>Facoltativo. Se scrivo nel campo note informazioni sulla mia salute, acconsento al loro trattamento (art. 9, par. 2, lett. a del GDPR). Posso revocarlo in qualsiasi momento.</span></label>
+          </div>
+          <div class="deposit-note">
+            <p>Per confermare la visita chiediamo una caparra di <mark class="ph" title="Dato da inserire">[IMPORTO CAPARRA]</mark>, pagata online in modo sicuro. Se disdici o sposti l'appuntamento con più di 24 ore di anticipo, la caparra ti viene restituita per intero. Se disdici a meno di 24 ore o non ti presenti, viene trattenuta.</p>
+          </div>
+          <div class="widget__actions">
+            <button type="button" class="btn btn--secondary" data-prev="2">Indietro</button>
+            <button type="submit" class="btn btn--primary">Vai al pagamento della caparra <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </form>
+
+        <!-- Confirmation -->
+        <div class="widget__panel done" id="panel-4" data-panel="4" hidden>
+          <h3 tabindex="-1" class="done__title"><svg class="done__tick" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7" pathLength="1"/></svg>Visita prenotata.</h3>
+          <p>Ti ho inviato un'email con tutti i dettagli a <strong id="done-email"><mark class="ph" title="Dato da inserire">[EMAIL PAZIENTE]</mark></strong>. Se non la trovi, controlla lo spam. A presto.</p>
+          <div class="demo-notice"><p><strong>Demo:</strong> in produzione questo passaggio avviene su Cal.com con pagamento sicuro Stripe.</p></div>
+          <button type="button" class="btn btn--secondary" id="done-reset">Torna al sito</button>
+        </div>
+      </div>
+
+      <aside class="summary reveal" data-delay="1" aria-labelledby="summary-title">
+        <h3 id="summary-title">Riepilogo</h3>
+        <dl>
+          <div><dt>Visita</dt><dd id="s-service">Prima visita medica nutrizionale</dd></div>
+          <div><dt>Modalità</dt><dd id="s-mode">In studio</dd></div>
+          <div><dt>Data e ora</dt><dd id="s-when"><span class="muted">Da scegliere</span></dd></div>
+          <div><dt>Caparra</dt><dd><mark class="ph" title="Dato da inserire">[IMPORTO CAPARRA]</mark></dd></div>
+          <div><dt>Saldo</dt><dd id="s-balance"><mark class="ph" title="Dato da inserire">[SALDO]</mark> in studio o con bonifico</dd></div>
+        </dl>
+        <div class="summary__after">
+          <p>Ricevi subito un'email di conferma con il riepilogo, il file per il tuo calendario e, per le visite online, il link Google Meet. Il giorno prima ti arriva un promemoria. Dalla stessa email puoi spostare o disdire in autonomia.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <!-- Wave B: single crest, mirrored -->
+  <div class="wave wave--sabbia" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,50 C160,90 300,20 480,60 C660,100 820,30 1000,64 C1180,98 1320,40 1440,70 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Fattura e detraibilità ===================== -->
+<section class="section section--sabbia invoice" id="fattura" aria-labelledby="invoice-title">
+  <div class="container">
+    <div class="prose reveal">
+      <span class="kicker">Dopo la visita</span>
+      <h2 id="invoice-title">Fattura e detrazione fiscale</h2>
+      <p>Per ogni visita ricevi una fattura sanitaria, esente IVA ai sensi dell'art. 10 DPR 633/72 <mark class="ph" title="Dato da inserire">[DA CONFERMARE COL COMMERCIALISTA]</mark>. I dati della fattura vengono trasmessi al Sistema Tessera Sanitaria, salvo tua opposizione all'invio: in quel caso dimmelo al momento del pagamento. Se la spesa viene trasmessa, la trovi già nella dichiarazione dei redditi precompilata.</p>
+      <p>Le visite mediche rientrano tra le spese sanitarie detraibili al 19% nei limiti previsti dalla legge; per la tua situazione specifica verifica con il commercialista o con il CAF.</p>
+    </div>
+    <ul class="invoice__facts reveal" data-delay="1">
+      <li><strong>Fattura sanitaria</strong>Emessa per ogni visita, in studio e online.</li>
+      <li><strong>Sistema Tessera Sanitaria</strong>Invio automatico dei dati, salvo tua opposizione al momento del pagamento.</li>
+      <li><strong>Detrazione 19%</strong>Spesa sanitaria detraibile nei limiti di legge, con pagamento tracciabile.</li>
+    </ul>
+  </div>
+  <!-- Wave E: two crests, deeper dive -->
+  <div class="wave wave--mare-profondo wave--deep" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" fill-opacity=".35" d="M0,52 C220,10 420,96 660,54 C900,12 1100,90 1300,58 C1380,46 1420,48 1440,50 L1440,120 L0,120 Z"/><path fill="currentColor" d="M0,70 C200,20 380,100 600,60 C820,20 1000,110 1220,70 C1320,52 1390,60 1440,66 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== CTA finale ===================== -->
+<section class="final final--flat" aria-labelledby="prenota-final-title">
+  <div class="container reveal">
+    <h2 id="prenota-final-title">Hai già tutto quello che serve.</h2>
+    <p class="lead">Scegli la visita, la data e la modalità: la conferma arriva in pochi minuti e puoi spostare o disdire in autonomia.</p>
+    <a class="btn btn--primary" href="#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="final__sub">In studio a Milano o online. Caparra rimborsabile fino a 24 ore prima.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== Footer (identical on every page) ===================== -->
+<footer class="footer" aria-label="Contatti e note legali">
+  <div class="container">
+    <h2 class="visually-hidden">Contatti e note legali</h2>
+    <p class="footer__desc">Dott.ssa Francesca Bodini, Medico Chirurgo, Specialista in Scienza dell'Alimentazione. Visite mediche nutrizionali in studio a Milano e online.</p>
+    <div class="footer__grid">
+      <div>
+        <h3>Studio</h3>
+        <ul>
+          <li><mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark></li>
+          <li>Milano</li>
+          <li>Tel. <mark class="ph" title="Dato da inserire">[TELEFONO]</mark></li>
+          <li><mark class="ph" title="Dato da inserire">[EMAIL]</mark></li>
+          <li><a href="contatti.html">Come arrivare</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Orari</h3>
+        <ul>
+          <li><mark class="ph" title="Dato da inserire">[ORARI]</mark></li>
+          <li>Visite online su appuntamento</li>
+          <li><a href="prenota.html#widget">Prenota online</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Link legali</h3>
+        <ul>
+          <li><a href="privacy.html">Informativa privacy</a></li>
+          <li><a href="cookie.html">Cookie policy</a></li>
+          <li><a href="consenso-informato.html">Consenso informato</a></li>
+          <li><a href="condizioni.html">Condizioni di prenotazione e disdetta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Note</h3>
+        <ul class="footer__note">
+          <li>P.IVA <mark class="ph" title="Dato da inserire">[P.IVA]</mark></li>
+          <li>Iscritta all'Ordine dei Medici Chirurghi e Odontoiatri di <mark class="ph" title="Dato da inserire">[PROVINCIA ORDINE]</mark>, n. <mark class="ph" title="Dato da inserire">[N. ISCRIZIONE OMCEO]</mark></li>
+          <li>Assicurazione RC professionale <mark class="ph" title="Dato da inserire">[COMPAGNIA ASSICURATIVA]</mark>, polizza n. <mark class="ph" title="Dato da inserire">[N. POLIZZA]</mark>, massimale <mark class="ph" title="Dato da inserire">[MASSIMALE]</mark></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disclaimer">Le informazioni di questo sito hanno scopo informativo e non sostituiscono la visita medica. In caso di urgenza rivolgiti al tuo medico curante o ai servizi di emergenza.</p>
+    <div class="footer__bottom">
+      <p>&copy; <mark class="ph" title="Dato da inserire">[ANNO]</mark> Dott.ssa Francesca Bodini. Tutti i diritti riservati.</p>
+      <p>Foto su Unsplash: <a href="https://unsplash.com/photos/GSmBJZ43vvQ" rel="noopener">Alen Smola</a>, <a href="https://unsplash.com/photos/j5almO1E8rU" rel="noopener">Artem Beliaikin</a>, <a href="https://unsplash.com/photos/2pia6OAe5rA" rel="noopener">Annie Spratt</a>, <a href="https://unsplash.com/photos/qEswHvOmi1c" rel="noopener">Lionello DelPiccolo</a>, <a href="https://unsplash.com/photos/EzH46XCDQRY" rel="noopener">Maarten van den Heuvel</a>, <a href="https://unsplash.com/photos/1SJRLmhnmaA" rel="noopener">Nathan Dumlao</a>; altre foto di cibo: <a href="https://unsplash.com/photos/a-colorful-salad-bowl-with-many-fresh-ingredients-_vy3L5n8VnI" rel="noopener">insalata</a>, <a href="https://unsplash.com/photos/fresh-vegetables-on-market-stall-Zaiuy5dKeCk" rel="noopener">verdure al mercato</a>, <a href="https://unsplash.com/photos/a-bowl-filled-with-different-types-of-vegetables-jrs4j6k6QKA" rel="noopener">bowl</a>, <a href="https://unsplash.com/photos/red-and-black-berries-on-white-ceramic-plate-xXrnMYeBcgI" rel="noopener">frutti di bosco</a>, <a href="https://unsplash.com/photos/a-row-of-colorful-peppers-sitting-on-top-of-a-white-table-jUpIxBfRIVY" rel="noopener">peperoni</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cta-bar" id="cta-bar">
+  <a class="btn btn--primary btn--block" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>

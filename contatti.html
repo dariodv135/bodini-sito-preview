@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contatti e studio a Milano | Dott.ssa Francesca Bodini</title>
+<meta name="description" content="Studio medico a Milano, visite online su Google Meet, orari, come arrivare, email e telefono. Scrivi alla dottoressa o prenota direttamente online.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B2A3F">
+<!-- Riattivare quando l'URL reale è noto, con href assoluto al posto di [URL SITO]:
+<link rel="canonical" href="[URL SITO]/contatti.html"> -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dott.ssa Francesca Bodini, Medico specialista in Scienza dell'Alimentazione">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Contatti e studio a Milano | Dott.ssa Francesca Bodini">
+<meta property="og:description" content="Studio medico a Milano, visite online su Google Meet, orari, come arrivare, email e telefono. Scrivi alla dottoressa o prenota direttamente online.">
+<meta name="twitter:title" content="Contatti e studio a Milano | Dott.ssa Francesca Bodini">
+<meta name="twitter:description" content="Studio medico a Milano, visite online su Google Meet, orari, come arrivare, email e telefono.">
+<!-- Fonts are self hosted in assets/fonts/ (see styles.css): no request leaves the site -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage-grotesque-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/figtree-latin.woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style data-page="contatti">
+/* Page specific rules only, every selector prefixed with .page--contatti */
+/* Rhythm: the studio block breathes, the online strip is short, the form gets room again */
+.page--contatti .studio-section{padding-block:calc(var(--section)*.85) calc(var(--section)*1.05)}
+.page--contatti .online-section{padding-block:calc(var(--section)*.6) calc(var(--section)*.85)}
+.page--contatti .write-section{padding-block:calc(var(--section)*.95) calc(var(--section)*1.1)}
+/* The page hero keeps its own line of context under the subtitle */
+.page--contatti .page-hero .chips{margin-top:1.1rem}
+/* Studio photo above the static map, both in the narrow column.
+   position:relative holds the provisional badge, as on the portrait */
+.page--contatti .studio-media{display:grid;gap:1.25rem;margin:0}
+.page--contatti .studio-fig{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;background:var(--cielo);box-shadow:var(--shadow-soft);aspect-ratio:4/3}
+.page--contatti .studio-fig img{width:100%;height:100%;object-fit:cover}
+.page--contatti .studio-info .contact-block:last-child{margin-bottom:0}
+.page--contatti .contact-block li strong{color:var(--inchiostro);font-weight:600}
+/* The map is a bordered field, never an embed: no third party, no cookies */
+.page--contatti .map-placeholder{aspect-ratio:16/11}
+.page--contatti .map-note{margin:.5rem 0 0;font-size:var(--t-s)}
+.page--contatti .online-fig{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--cielo);box-shadow:var(--shadow-soft);aspect-ratio:4/3}
+.page--contatti .online-fig img{width:100%;height:100%;object-fit:cover}
+.page--contatti .write-aside .callout{margin-top:1.5rem}
+.page--contatti .write-aside .link-arrow{margin-top:.25rem}
+.page--contatti .form .demo-notice{margin-top:0}
+.page--contatti .form__done .btn{margin-top:.75rem}
+.page--contatti .form__done .actions{margin-top:1.25rem}
+@media (max-width:899px){
+  .page--contatti .studio-media{max-width:560px}
+  .page--contatti .online-fig{max-width:560px}
+}
+</style>
+</head>
+<body class="page page--contatti">
+<!-- The .js class hides every .reveal until main.js shows it: if main.js never arrives
+     (404, broken cache, network error) the class is dropped again after 4s and the page
+     falls back to its no-JS presentation, fully readable. -->
+<script>(function(d){d.classList.add('js');setTimeout(function(){if(!window.BodiniSite)d.classList.remove('js');},4000);})(document.documentElement);</script>
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- ===================== Header (identical on every page, only aria-current changes) ===================== -->
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Dott.ssa Francesca Bodini, vai alla home">
+      <span class="brand__name">Dott.ssa Francesca Bodini</span>
+      <span class="brand__role">Medico specialista in Scienza dell'Alimentazione</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri il menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav-menu" aria-label="Navigazione principale">
+      <ul class="nav__list">
+        <li><a href="chi-sono.html">Chi sono</a></li>
+        <li><a href="percorsi.html">Percorsi</a></li>
+        <li><a href="prenota.html">Visite e prenota</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contatti.html" aria-current="page">Contatti</a></li>
+      </ul>
+      <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<!-- tabindex="-1": without it Safari moves the scroll but leaves focus on the skip link -->
+<main id="main" tabindex="-1">
+
+<!-- ===================== Page hero ===================== -->
+<section class="page-hero" aria-labelledby="contatti-page-title">
+  <div class="container page-hero__grid">
+    <div class="page-hero__text">
+      <span class="kicker reveal">Contatti</span>
+      <h1 id="contatti-page-title" class="reveal reveal--clip">Scrivimi, oppure vieni a trovarmi.</h1>
+      <p class="page-hero__sub reveal" data-delay="1">Per prenotare non serve telefonare: puoi farlo online in pochi minuti. Per tutto il resto, questi sono i modi per raggiungermi.</p>
+      <p class="chips reveal" data-delay="2"><span class="chip">Studio a Milano</span><span class="chip chip--online">Online su Google Meet</span></p>
+    </div>
+    <figure class="page-hero__media reveal">
+      <img src="assets/cibo-verdure-mercato.jpg" srcset="assets/cibo-verdure-mercato-480.jpg 480w, assets/cibo-verdure-mercato-800.jpg 800w, assets/cibo-verdure-mercato.jpg 1400w" sizes="(max-width:899px) 92vw, 40vw" width="1400" height="1050" alt="Banco del mercato con ravanelli rossi, carote, cipollotti, broccoli e cavolfiori." loading="eager" fetchpriority="high" decoding="async">
+    </figure>
+  </div>
+  <!-- Wave F: single crest, shallow -->
+  <div class="wave wave--schiuma" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,58 C220,100 400,30 640,66 C880,102 1060,24 1280,60 C1360,72 1410,70 1440,64 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Studio, orari, come arrivare ===================== -->
+<section class="section studio-section" aria-labelledby="studio-title">
+  <div class="container">
+    <div class="grid-2 grid-2--5-7">
+      <div class="studio-media reveal">
+        <!-- assets/studio.jpg is a stock photo, not the real studio: the badge says so.
+             Replace with assets/studio-reale.jpg when available, then remove the figcaption. -->
+        <figure class="studio-fig">
+          <img src="assets/studio.jpg" srcset="assets/studio-480.jpg 480w, assets/studio-800.jpg 800w, assets/studio.jpg 1000w" sizes="(max-width:899px) 92vw, 42vw" width="1000" height="750" alt="Stanza luminosa con due finestre, scrivania in legno e piante verdi." loading="lazy" decoding="async">
+          <figcaption class="portrait__badge">Immagine provvisoria</figcaption>
+        </figure>
+        <div class="map-placeholder">
+          <p><strong>Mappa: <mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark></strong>
+          Milano. La mappa non è incorporata nella pagina: apri le indicazioni con il link qui sotto.</p>
+        </div>
+        <p class="map-note muted">Apri in Google Maps: <mark class="ph" title="Dato da inserire">[LINK MAPPA]</mark></p>
+      </div>
+
+      <div class="studio-info">
+        <div class="contact-block reveal">
+          <h2 id="studio-title">Lo studio a Milano</h2>
+          <ul>
+            <li><mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark>, Milano</li>
+            <li>Tel. <mark class="ph" title="Dato da inserire">[TELEFONO]</mark> (in orario di studio; se non rispondo sono in visita, scrivimi pure)</li>
+            <li><mark class="ph" title="Dato da inserire">[EMAIL]</mark></li>
+          </ul>
+        </div>
+
+        <div class="contact-block reveal" data-delay="1">
+          <h2 id="orari-title">Orari</h2>
+          <ul>
+            <li><mark class="ph" title="Dato da inserire">[ORARI]</mark></li>
+            <li>Visite online su appuntamento, negli stessi orari</li>
+            <li>Le visite si prenotano online: chiamare non è necessario</li>
+          </ul>
+        </div>
+
+        <div class="contact-block reveal" data-delay="2">
+          <h2 id="arrivare-title">Come arrivare</h2>
+          <ul>
+            <li><strong>Mezzi pubblici:</strong> <mark class="ph" title="Dato da inserire">[MEZZI]</mark></li>
+            <li><strong>In auto:</strong> <mark class="ph" title="Dato da inserire">[PARCHEGGIO]</mark></li>
+            <li><strong>Accessibilità dello studio:</strong> <mark class="ph" title="Dato da inserire">[ACCESSIBILITÀ STUDIO]</mark></li>
+          </ul>
+          <p class="actions"><a class="link-arrow" href="prenota.html#widget">Prenota una visita in studio <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Wave C: two overlapping crests -->
+  <div class="wave wave--sabbia" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" fill-opacity=".3" d="M0,58 C180,26 320,84 540,46 C760,8 920,88 1140,52 C1290,28 1390,40 1440,36 L1440,120 L0,120 Z"/><path fill="currentColor" d="M0,72 C160,40 300,96 520,58 C740,20 900,100 1120,64 C1280,38 1380,52 1440,46 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Visite online ===================== -->
+<section class="section section--sabbia online-section" aria-labelledby="contatti-online-title">
+  <div class="container">
+    <div class="grid-2 grid-2--7-5 grid-2--center">
+      <div class="reveal">
+        <span class="kicker">A distanza</span>
+        <h2 id="contatti-online-title">Visite online</h2>
+        <!-- The two chips of this page live in the page hero: repeating them here would spend
+             the lime accent twice on the same screenful, with slightly different wording -->
+        <p>Le visite online si svolgono su Google Meet, da qualsiasi città. Il link arriva con l'email di conferma, non devi installare nulla. Prima della visita carichi esami e diario alimentare seguendo le istruzioni che ricevi.</p>
+        <p class="actions"><a class="link-arrow" href="prenota.html">Come funziona la visita online <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      </div>
+      <figure class="online-fig reveal" data-delay="1">
+        <img src="assets/cibo-bowl.jpg" srcset="assets/cibo-bowl-480.jpg 480w, assets/cibo-bowl-800.jpg 800w, assets/cibo-bowl.jpg 1400w" sizes="(max-width:639px) 92vw, 30vw" width="1400" height="1050" alt="Bowl vista dall'alto con pollo speziato, ceci, cetrioli, peperoni, pomodori e cipolla rossa." loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </div>
+  <!-- Wave D: long single crest -->
+  <div class="wave wave--schiuma" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" d="M0,64 C180,110 360,20 560,52 C760,84 900,118 1100,80 C1260,50 1360,40 1440,58 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== Form contatti (demo: valida, conferma, non invia) ===================== -->
+<section class="section write-section" aria-labelledby="form-title">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="write-aside reveal">
+        <h2 id="form-title">Scrivimi</h2>
+        <p>Per domande sui percorsi, sulla visita online o sulla tua situazione prima di prenotare. Rispondo in genere entro <mark class="ph" title="Dato da inserire">[TEMPO RISPOSTA]</mark>.</p>
+        <p><a class="link-arrow" href="prenota.html#widget">Per prenotare, il calendario è più veloce <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        <div class="callout callout--blu">
+          <p>Non scrivere qui dati sanitari dettagliati o referti: ne parliamo in visita, in un ambiente protetto.</p>
+        </div>
+      </div>
+
+      <!-- method="post" + action on itself is the belt without JS: the demo never sends anything,
+           but if the script fails the browser must not put name, email and message in a query
+           string, where they would land in history, in server logs and in the Referer header. -->
+      <form class="form form--contact reveal" data-delay="1" novalidate data-demo="contact" action="contatti.html" method="post">
+        <div class="form__body">
+          <div class="demo-notice"><p>Modulo dimostrativo: il messaggio viene controllato nel browser e non viene inviato a nessuno.</p></div>
+          <noscript><p class="field__hint">Per usare questo modulo serve JavaScript. Scrivimi a <mark class="ph" title="Dato da inserire">[EMAIL]</mark> o chiama il <mark class="ph" title="Dato da inserire">[TELEFONO]</mark>.</p></noscript>
+          <div class="fields--2">
+            <div class="field">
+              <label for="f-nome">Nome e cognome</label>
+              <input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="err-nome">
+              <p class="field__err" id="err-nome" data-err="nome"></p>
+            </div>
+            <div class="field">
+              <label for="f-contact-email">Email</label>
+              <input id="f-contact-email" name="email" type="email" autocomplete="email" required aria-describedby="err-contact-email">
+              <p class="field__err" id="err-contact-email" data-err="email"></p>
+            </div>
+          </div>
+          <div class="fields--2">
+            <div class="field">
+              <label for="f-telefono">Telefono <small>(facoltativo)</small></label>
+              <input id="f-telefono" name="telefono" type="tel" autocomplete="tel" aria-describedby="err-telefono">
+              <p class="field__err" id="err-telefono" data-err="telefono"></p>
+            </div>
+            <div class="field">
+              <label for="f-argomento">Argomento</label>
+              <select id="f-argomento" name="argomento" required aria-describedby="err-argomento">
+                <option value="">Scegli un argomento</option>
+                <option value="percorsi">Informazioni sui percorsi</option>
+                <option value="online">Visita online</option>
+                <option value="bariatrica">Chirurgia bariatrica</option>
+                <option value="chetogenica">Dieta chetogenica</option>
+                <option value="altro">Altro</option>
+              </select>
+              <p class="field__err" id="err-argomento" data-err="argomento"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-messaggio">Messaggio</label>
+            <textarea id="f-messaggio" name="messaggio" rows="6" required aria-describedby="hint-messaggio err-messaggio"></textarea>
+            <p class="field__hint" id="hint-messaggio">Bastano poche righe: mi servono per capire come aiutarti.</p>
+            <p class="field__err" id="err-messaggio" data-err="messaggio"></p>
+          </div>
+          <div class="consent">
+            <label for="c-contact-privacy">
+              <input id="c-contact-privacy" name="privacy" type="checkbox" required aria-describedby="err-privacy">
+              <span>Ho letto l'<a href="privacy.html">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta.</span>
+            </label>
+            <p class="field__err" id="err-privacy" data-err="privacy"></p>
+          </div>
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit">Invia il messaggio <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <p class="form__note">Se il modulo non funziona, scrivimi a <mark class="ph" title="Dato da inserire">[EMAIL]</mark>.</p>
+          </div>
+          <!-- Single live region for the whole form: the six .field__err paragraphs are silent
+               and reach the screen reader through aria-describedby when focus lands on the
+               field, so an empty submit announces one sentence instead of seven in a row
+               (same pattern as the #err-consent summary of prenota.html). -->
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="form__done" hidden>
+          <h3>
+            <svg class="done__tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5 L9.5 18 L20 6.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg>
+            Messaggio controllato.
+          </h3>
+          <p>I campi sono a posto. Nel frattempo, se vuoi, puoi già prenotare la prima visita.</p>
+          <div class="demo-notice"><p><strong>Demo:</strong> questo modulo non invia nulla. Per scrivermi davvero usa <mark class="ph" title="Dato da inserire">[EMAIL]</mark>.</p></div>
+          <div class="actions">
+            <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <button class="btn btn--secondary" type="button" data-form-reset>Scrivi un altro messaggio</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Wave E: two crests, deeper dive -->
+  <div class="wave wave--mare-profondo wave--deep" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="currentColor" fill-opacity=".35" d="M0,52 C220,10 420,96 660,54 C900,12 1100,90 1300,58 C1380,46 1420,48 1440,50 L1440,120 L0,120 Z"/><path fill="currentColor" d="M0,70 C200,20 380,100 600,60 C820,20 1000,110 1220,70 C1320,52 1390,60 1440,66 L1440,120 L0,120 Z"/></svg>
+  </div>
+</section>
+
+<!-- ===================== CTA finale ===================== -->
+<section class="final final--flat" aria-labelledby="contatti-final-title">
+  <div class="container reveal">
+    <h2 id="contatti-final-title">Preferisci partire subito?</h2>
+    <p class="lead">Prenota la prima visita online: scegli data, orario e modalità, e ricevi la conferma in pochi minuti.</p>
+    <a class="btn btn--primary" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="final__sub">In studio a Milano o online. Caparra rimborsabile fino a 24 ore prima.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== Footer (identical on every page) ===================== -->
+<footer class="footer" aria-label="Contatti e note legali">
+  <div class="container">
+    <h2 class="visually-hidden">Contatti e note legali</h2>
+    <p class="footer__desc">Dott.ssa Francesca Bodini, Medico Chirurgo, Specialista in Scienza dell'Alimentazione. Visite mediche nutrizionali in studio a Milano e online.</p>
+    <div class="footer__grid">
+      <div>
+        <h3>Studio</h3>
+        <ul>
+          <li><mark class="ph" title="Dato da inserire">[INDIRIZZO STUDIO]</mark></li>
+          <li>Milano</li>
+          <li>Tel. <mark class="ph" title="Dato da inserire">[TELEFONO]</mark></li>
+          <li><mark class="ph" title="Dato da inserire">[EMAIL]</mark></li>
+          <li><a href="contatti.html">Come arrivare</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Orari</h3>
+        <ul>
+          <li><mark class="ph" title="Dato da inserire">[ORARI]</mark></li>
+          <li>Visite online su appuntamento</li>
+          <li><a href="prenota.html#widget">Prenota online</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Link legali</h3>
+        <ul>
+          <li><a href="privacy.html">Informativa privacy</a></li>
+          <li><a href="cookie.html">Cookie policy</a></li>
+          <li><a href="consenso-informato.html">Consenso informato</a></li>
+          <li><a href="condizioni.html">Condizioni di prenotazione e disdetta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Note</h3>
+        <ul class="footer__note">
+          <li>P.IVA <mark class="ph" title="Dato da inserire">[P.IVA]</mark></li>
+          <li>Iscritta all'Ordine dei Medici Chirurghi e Odontoiatri di <mark class="ph" title="Dato da inserire">[PROVINCIA ORDINE]</mark>, n. <mark class="ph" title="Dato da inserire">[N. ISCRIZIONE OMCEO]</mark></li>
+          <li>Assicurazione RC professionale <mark class="ph" title="Dato da inserire">[COMPAGNIA ASSICURATIVA]</mark>, polizza n. <mark class="ph" title="Dato da inserire">[N. POLIZZA]</mark>, massimale <mark class="ph" title="Dato da inserire">[MASSIMALE]</mark></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disclaimer">Le informazioni di questo sito hanno scopo informativo e non sostituiscono la visita medica. In caso di urgenza rivolgiti al tuo medico curante o ai servizi di emergenza.</p>
+    <div class="footer__bottom">
+      <p>&copy; <mark class="ph" title="Dato da inserire">[ANNO]</mark> Dott.ssa Francesca Bodini. Tutti i diritti riservati.</p>
+      <p>Foto su Unsplash: <a href="https://unsplash.com/photos/GSmBJZ43vvQ" rel="noopener">Alen Smola</a>, <a href="https://unsplash.com/photos/j5almO1E8rU" rel="noopener">Artem Beliaikin</a>, <a href="https://unsplash.com/photos/2pia6OAe5rA" rel="noopener">Annie Spratt</a>, <a href="https://unsplash.com/photos/qEswHvOmi1c" rel="noopener">Lionello DelPiccolo</a>, <a href="https://unsplash.com/photos/EzH46XCDQRY" rel="noopener">Maarten van den Heuvel</a>, <a href="https://unsplash.com/photos/1SJRLmhnmaA" rel="noopener">Nathan Dumlao</a>; altre foto di cibo: <a href="https://unsplash.com/photos/a-colorful-salad-bowl-with-many-fresh-ingredients-_vy3L5n8VnI" rel="noopener">insalata</a>, <a href="https://unsplash.com/photos/fresh-vegetables-on-market-stall-Zaiuy5dKeCk" rel="noopener">verdure al mercato</a>, <a href="https://unsplash.com/photos/a-bowl-filled-with-different-types-of-vegetables-jrs4j6k6QKA" rel="noopener">bowl</a>, <a href="https://unsplash.com/photos/red-and-black-berries-on-white-ceramic-plate-xXrnMYeBcgI" rel="noopener">frutti di bosco</a>, <a href="https://unsplash.com/photos/a-row-of-colorful-peppers-sitting-on-top-of-a-white-table-jUpIxBfRIVY" rel="noopener">peperoni</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cta-bar" id="cta-bar">
+  <a class="btn btn--primary btn--block" href="prenota.html#widget">Prenota una visita <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>
