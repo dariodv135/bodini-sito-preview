@@ -1,0 +1,3 @@
+# Area riservata: nessuna indicizzazione
+User-agent: *
+Disallow: /

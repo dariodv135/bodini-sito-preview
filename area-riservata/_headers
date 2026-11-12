@@ -1,0 +1,18 @@
+# Security and privacy headers of the reserved area (design
+# mobile-ui-design.md section 9.3, brief AC-R8), read by Cloudflare Workers
+# Static Assets. The two hash placeholders are filled at build time by
+# riservata/security-headers.mjs with the sha256 of the inline <script> and
+# <style> blocks Astro writes (island runtime): the build stops if it cannot.
+# No 'wasm-unsafe-eval': there is no WebAssembly (no Pagefind) yet.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-QzWFZi+FLIx23tnm9SBU4aEgx4x8DsuASP07mfqol/c=' 'sha256-Ya0pUYrC7nM5Cn/056TyVuEiz6dFGrzmkWzgON0pF0U='; style-src 'self' 'sha256-vv9IoKo7BSLbWcUHr3tNmfNVmm5L/9Cfn2H6LMk7/ow='; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  Cache-Control: private, no-cache
+
+/_astro/*
+  ! Cache-Control
+  Cache-Control: private, max-age=31536000, immutable
