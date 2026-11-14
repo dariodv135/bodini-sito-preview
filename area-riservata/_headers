@@ -3,10 +3,16 @@
 # Static Assets. The two hash placeholders are filled at build time by
 # riservata/security-headers.mjs with the sha256 of the inline <script> and
 # <style> blocks Astro writes (island runtime): the build stops if it cannot.
-# No 'wasm-unsafe-eval': there is no WebAssembly (no Pagefind) yet.
+# script-src adds 'wasm-unsafe-eval' and nothing else (brief
+# docs/brief-area-portale.md, AC-I14): the full-text search compiles the
+# WebAssembly of Pagefind (/pagefind/wasm.it.pagefind), in its worker
+# (/pagefind/pagefind-worker.js, same origin, allowed by script-src 'self'
+# since there is no worker-src) or in the page. It allows compiling
+# WebAssembly only, not eval() or new Function(). The index files under
+# /pagefind/ keep the default private, no-cache.
 
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-QzWFZi+FLIx23tnm9SBU4aEgx4x8DsuASP07mfqol/c=' 'sha256-Ya0pUYrC7nM5Cn/056TyVuEiz6dFGrzmkWzgON0pF0U='; style-src 'self' 'sha256-vv9IoKo7BSLbWcUHr3tNmfNVmm5L/9Cfn2H6LMk7/ow='; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-QzWFZi+FLIx23tnm9SBU4aEgx4x8DsuASP07mfqol/c=' 'sha256-Ya0pUYrC7nM5Cn/056TyVuEiz6dFGrzmkWzgON0pF0U='; style-src 'self' 'sha256-vv9IoKo7BSLbWcUHr3tNmfNVmm5L/9Cfn2H6LMk7/ow='; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
   Referrer-Policy: no-referrer
   X-Robots-Tag: noindex, nofollow
   X-Content-Type-Options: nosniff
